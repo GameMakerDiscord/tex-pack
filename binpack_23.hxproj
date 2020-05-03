@@ -19,12 +19,12 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="sfgml_next&#xA;sfgml_version=2.3&#xA;sf-std-package=binp&#xA;sfgml-local-prefix=l_" />
+    <option directives="sfgml_version=2.3" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="Main" />
     <option enabledebug="False" />
-    <option additional="-dce full" />
+    <option additional="binpack-shared.hxml" />
   </build>
   <!-- haxelib libraries -->
   <haxelib>

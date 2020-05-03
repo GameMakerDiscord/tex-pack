@@ -1,4 +1,20 @@
--dce full
--D sf-std-package=tex_std
--D sfgml-local-prefix=l_
--D sfgml-main=tex_page_init
+-debug
+-lib sfhx
+-lib sfgml
+-cp src
+-main Main
+binpack-shared.hxml
+
+--each
+-D sfgml_version=1.4.1804
+-D sfgml_snake_case
+-js binpack_14.gmx/extensions/TexturePack.extension.gmx._
+
+--next
+-D sfgml_version=2.2.5
+-D sfgml_snake_case
+-js binpack_22/extensions/TexturePack/TexturePack.yy._
+
+--next
+-D sfgml_version=2.3
+-js binpack_23/scripts/scr_texpack/scr_texpack.gml._

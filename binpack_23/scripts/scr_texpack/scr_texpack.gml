@@ -1,10 +1,10 @@
-// Generated at 2020-05-03 16:32:44 (242ms) for v2.3+
+// Generated at 2020-05-03 16:55:39 (201ms) for v2.3+
 //{ metatype
-globalvar binp_haxe_type_markerValue; binp_haxe_type_markerValue = [];
-globalvar mt_TexEntry; mt_TexEntry = new binp_haxe_class(-1, "TexEntry", TexEntry);
-globalvar mt_TexPage; mt_TexPage = new binp_haxe_class(-1, "TexPage", TexPage);
-globalvar mt_TexSprite; mt_TexSprite = new binp_haxe_class(-1, "TexSprite", TexSprite);
-globalvar mt_binp_haxe_class; mt_binp_haxe_class = new binp_haxe_class(-1, "binp_haxe_class", binp_haxe_class);
+globalvar tex_std_haxe_type_markerValue; tex_std_haxe_type_markerValue = [];
+globalvar mt_TexEntry; mt_TexEntry = new tex_std_haxe_class(-1, "TexEntry", TexEntry);
+globalvar mt_TexPage; mt_TexPage = new tex_std_haxe_class(-1, "TexPage", TexPage);
+globalvar mt_TexSprite; mt_TexSprite = new tex_std_haxe_class(-1, "TexSprite", TexSprite);
+globalvar mt_tex_std_haxe_class; mt_tex_std_haxe_class = new tex_std_haxe_class(-1, "tex_std_haxe_class", tex_std_haxe_class);
 //}
 
 //{ TexEntry
@@ -230,10 +230,10 @@ function TexSprite_drawExt() {
 
 //}
 
-//{ binp.haxe.class
+//{ tex_std.haxe.class
 
-function binp_haxe_class() constructor {
-	// binp_haxe_class(l_id:int, name:string, ?l_constructor:dynamic)
+function tex_std_haxe_class() constructor {
+	// tex_std_haxe_class(l_id:int, name:string, ?l_constructor:dynamic)
 	var this = self;
 	static superClass = undefined;
 	static constructor = undefined;
@@ -243,7 +243,7 @@ function binp_haxe_class() constructor {
 	var l_constructor;
 	if (argument_count > 2) l_constructor = argument[2]; else l_constructor = undefined;
 	this.superClass = undefined;
-	this.marker = binp_haxe_type_markerValue;
+	this.marker = tex_std_haxe_type_markerValue;
 	this.index = argument[0];
 	this.name = argument[1];
 	this.constructor = l_constructor;
