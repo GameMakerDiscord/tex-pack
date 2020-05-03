@@ -26,6 +26,9 @@ one.draw(0, x, y);
 two.drawExt(1, x, y, 2, 2, current_time / 3, c_white, 1);
 ```
 
+## API
+See `doc22.html` and `doc23.html` in `export` directory.
+
 ## Compiling Haxe->GML
 
 - Install [Haxe](https://haxe.org/)
