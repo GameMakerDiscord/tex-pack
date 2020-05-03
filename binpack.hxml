@@ -1,0 +1,4 @@
+-dce full
+-D sf-std-package=tex_std
+-D sfgml-local-prefix=l_
+-D sfgml-main=tex_page_init

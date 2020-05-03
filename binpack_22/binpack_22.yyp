@@ -1,0 +1,1574 @@
+{
+    "id": "ff83828c-dd8a-4287-ab1f-4471fc44101e",
+    "modelName": "GMProject",
+    "mvc": "1.0",
+    "IsDnDProject": false,
+    "configs": [
+        
+    ],
+    "option_ecma": false,
+    "parentProject": {
+        "id": "79e87b58-ea01-4a6e-b2d1-a838836be29b",
+        "modelName": "GMProjectParent",
+        "mvc": "1.0",
+        "alteredResources": [
+            {
+                "Key": "ed6a955d-5826-4f98-a450-10b414266c27",
+                "Value": {
+                    "configDeltas": [
+                        "inherited"
+                    ],
+                    "id": "77277265-2864-4288-a55f-7a56876ed322",
+                    "resourcePath": "options\\main\\options_main.yy",
+                    "resourceType": "GMMainOptions"
+                }
+            }
+        ],
+        "hiddenResources": [
+            
+        ],
+        "projectPath": "${base_project}"
+    },
+    "resources": [
+        {
+            "Key": "0182112f-f643-4fd4-9c87-18cecc0079dc",
+            "Value": {
+                "id": "c9d2c887-b2c1-4bef-a572-5fd878267c9d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_023.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "03844466-f0b9-4b14-80fb-b03280cba9c0",
+            "Value": {
+                "id": "03a72328-f4bd-4a33-b1f9-779d844838d6",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_038.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "0419ae13-e070-4d7c-ba75-8aa440b2e831",
+            "Value": {
+                "id": "e4f7c633-02a6-4a29-9089-215169931194",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_019.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "0714bf49-da8c-4718-bfb0-d164ae59eec1",
+            "Value": {
+                "id": "c2d18e0d-acf6-4271-9fac-cfd1c678c4e5",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_109.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "0737a6b8-e343-453c-8a11-e8c27c75b2db",
+            "Value": {
+                "id": "5051c876-e9dd-4b68-b1ce-f6bc88a43e7c",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_120.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "074e2d52-a37b-4a64-88b7-649628da8a23",
+            "Value": {
+                "id": "662534f7-6c1d-49ae-b33d-7c9a52542654",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_072.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "075b4e03-2c07-4000-a7fd-0efb5849f6b5",
+            "Value": {
+                "id": "32ad80a1-0fe3-4cef-9c0a-d91e349298e6",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_147.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "08266613-bc09-4b2b-bb7e-07093fb9a570",
+            "Value": {
+                "id": "a9529c51-9bba-4332-9920-e438fcf4a444",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_122.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "087b1c22-4fa1-43e5-a1ad-41246c1933f1",
+            "Value": {
+                "id": "e9274e00-85e0-4bde-888d-b68c5f4a24ed",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_117.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "0955f44e-8466-4fa3-b20e-a3220ddd43f9",
+            "Value": {
+                "id": "37aa3f0d-d692-42fb-a2af-5dcb1d88673d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_155.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "0d9a7938-3107-4ef2-a902-f2f517f80125",
+            "Value": {
+                "id": "e1e86f6c-b9fa-4b37-9333-c9673abc2c24",
+                "resourcePath": "fonts\\fnt_texpack_demo\\fnt_texpack_demo.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "10332260-c061-4069-b34d-90df8f3fee60",
+            "Value": {
+                "id": "008a7ea1-445c-4b8a-9a5c-fcf46a5ff4b3",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_079.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "10b1e57e-2c57-4d98-a986-293c55598de0",
+            "Value": {
+                "id": "0f30f528-6fdd-44ed-a894-10abfe6a2602",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_052.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "147490d3-b2f8-47de-87d2-fd24af366e16",
+            "Value": {
+                "id": "067e6dbd-bef9-4efa-85ab-6b0b0fe66a6a",
+                "resourcePath": "views\\147490d3-b2f8-47de-87d2-fd24af366e16.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "197ec417-7d4e-41cf-99a5-2b3ac461a0a5",
+            "Value": {
+                "id": "dfecb725-cd0c-409a-8066-1c7aac4dd515",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_142.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1a501ac2-eee8-4fec-82f9-5c1b19243a16",
+            "Value": {
+                "id": "5f622b95-9e26-48f6-9d70-934ffcc758b7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_075.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1ae6983b-0ff6-478c-a89b-65c0037701ac",
+            "Value": {
+                "id": "df0c5ce7-367f-45da-a89a-11a50de1f804",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_082.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1bca2b29-9a28-4af6-9814-5740dd07c139",
+            "Value": {
+                "id": "7489e775-649d-4fda-90e4-e38f7ff00e40",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_045.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1cd66bce-d3ac-4687-8251-8f7abfb2ece6",
+            "Value": {
+                "id": "28be78b1-20a7-49b8-a537-bca8e3827931",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_010.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1ec254c9-ff3b-4af3-9573-df47bf9e54e3",
+            "Value": {
+                "id": "89e127a0-2fbe-4461-b554-3a35d2bb5af5",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_042.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1f6dee2e-b936-4980-b76b-10b3d0cc18f4",
+            "Value": {
+                "id": "138fb646-da6e-48f0-9e15-b25347fa8054",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_073.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "1fb59cde-6208-47fb-bba8-72d012e00ed9",
+            "Value": {
+                "id": "42005df7-f0f4-4fdc-ba4e-1d2d3aaf025f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_126.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "22920532-d0d2-448f-9e48-2174fd7423aa",
+            "Value": {
+                "id": "62cccf56-8b06-4134-ba9b-a8334604a67a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_013.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "22b74a7d-e29a-4cfe-a601-4425423e5c7d",
+            "Value": {
+                "id": "26a5b105-f104-4d34-8534-bf999bbe2d97",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_160.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "22d1cb72-a753-4346-9cab-3076b856259e",
+            "Value": {
+                "id": "63561bbc-fb3e-4d66-ba83-d6cbf727758c",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_021.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "237c8f05-799d-4bc7-9bfb-111de16ab83f",
+            "Value": {
+                "id": "1f0194c1-69e0-482d-87bd-107185966c49",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_153.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "23d76ba4-b019-40cf-87c5-d00708dca0c9",
+            "Value": {
+                "id": "65d27577-30a2-488d-a54d-8c608a9867c1",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_060.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "25acfb15-ec38-4356-ab35-31152a87071b",
+            "Value": {
+                "id": "eda73bbe-654a-4303-84a2-f82f51412824",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_065.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "260117b3-d554-4e56-97c7-5aaf94e63cf3",
+            "Value": {
+                "id": "d54d914a-9f41-4484-afdd-c0a0e1d88db1",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_061.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "268281ca-be0d-4271-9f21-a1a9eade0dc4",
+            "Value": {
+                "id": "effb0ac0-4f6f-41e5-859c-379bb78c9949",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_035.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "291b7f7a-b507-49e1-b2f6-d43864b5bd08",
+            "Value": {
+                "id": "a700ed71-6c11-4410-b6ee-3fd4ae6b1c48",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_057.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2966d58c-e841-46d1-8c49-d1d1496f1430",
+            "Value": {
+                "id": "893140ab-7e5b-42cf-aae8-7f3894322da2",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_154.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2abecfa7-4ec9-45ec-b540-0cbc9a1c1867",
+            "Value": {
+                "id": "58892787-20f0-40dc-bfb8-035ad18ec605",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_041.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2b018c1d-0c9d-494e-8919-217cb39e7808",
+            "Value": {
+                "id": "7772f588-891e-42f1-8cb5-300237ad59a0",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_017.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2b421106-6311-49fc-9bae-d06dfdf98031",
+            "Value": {
+                "id": "c65663fe-5836-4565-af9e-c258fc441e21",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_078.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2b4bbd7c-7eb4-43c9-b51e-320a448ca42e",
+            "Value": {
+                "id": "0ca6733d-bedf-44fc-9ead-f94bd797f85e",
+                "resourcePath": "views\\2b4bbd7c-7eb4-43c9-b51e-320a448ca42e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2c2fa215-3cbe-4f87-960e-a1eb77c62a0a",
+            "Value": {
+                "id": "5511b284-d6e3-4a1e-b759-3bab0bf47f32",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_107.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2db6e296-8290-47af-adb1-8b9f81b8d086",
+            "Value": {
+                "id": "1d17e796-ac78-442d-b53a-65a913760c43",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_032.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "2e73382f-7bd0-4eac-9011-eeb089cf4754",
+            "Value": {
+                "id": "91435ef3-7f84-4ce1-8415-4525cd0e3f18",
+                "resourcePath": "views\\2e73382f-7bd0-4eac-9011-eeb089cf4754.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "2f3b10e9-6707-495b-904a-49c2201f1a08",
+            "Value": {
+                "id": "2aa2b7f6-6b3e-4351-af74-7ca19248b14f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_158.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "32ec0cfa-070b-4e33-9009-6de95238f3c3",
+            "Value": {
+                "id": "55baac64-9cc7-497c-86d9-256bb9876dbd",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_133.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3317214d-81b1-4fff-bbb1-653208fdbdaa",
+            "Value": {
+                "id": "c3f80a29-48f6-44b7-ab85-0476b57dff10",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_101.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3394a52f-ca29-495a-8e9b-1b569807e001",
+            "Value": {
+                "id": "595a6eb0-47c8-467d-936b-90f80083b354",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_039.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3459c62a-70b6-4eda-969a-b6b9a797c29c",
+            "Value": {
+                "id": "44920012-aa08-4c7e-a6a9-cd1222c0cdbd",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_044.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3468a2c0-39f7-4d4e-bea7-032e3ad29857",
+            "Value": {
+                "id": "d88b39b4-73c4-4c68-9f5b-874b366f5c7c",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_138.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "34aac57f-bdf3-459d-86ed-4d9e40c7e741",
+            "Value": {
+                "id": "ae8cead7-da7b-4190-980f-b951597c79d8",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_081.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "37956ef8-c31b-46ec-b6f3-c06a1352da68",
+            "Value": {
+                "id": "5c153e25-447c-4ee4-a7dd-8199a59fc988",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_020.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3b0215f8-5e8b-4a3f-ae47-57d70dfd5abb",
+            "Value": {
+                "id": "ac911d88-d14b-4451-86a7-6a25008ec844",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_063.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3ba05efa-30f1-41a0-95d4-b7a7c1938dee",
+            "Value": {
+                "id": "1484597c-f9c8-4400-8114-e3aa8f36aaff",
+                "resourcePath": "views\\3ba05efa-30f1-41a0-95d4-b7a7c1938dee.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3be35469-cd95-475e-bcfe-adebde843cb6",
+            "Value": {
+                "id": "571652a9-b0b8-496b-9292-146b219ad836",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_083.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "3cb072ea-79fa-432a-a188-6ab3d44fc5e6",
+            "Value": {
+                "id": "cf684a6e-b847-46e2-ac81-20dab4a64b43",
+                "resourcePath": "views\\3cb072ea-79fa-432a-a188-6ab3d44fc5e6.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3eb2e445-7967-444a-a1db-b4803c40d40a",
+            "Value": {
+                "id": "d4c42bf8-2aab-443e-aea4-e91b5468e149",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_033.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "40c85f26-b778-425f-8a44-a857e5e73ca1",
+            "Value": {
+                "id": "3523f080-1b5c-48af-8e73-e62119d593b8",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_025.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "41d1246f-486b-49f6-b426-948d39d3d062",
+            "Value": {
+                "id": "97e12a46-8ea9-4e5a-807b-06616c46c7a3",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_074.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "42e2598a-4a1c-4b11-931f-7592e2ae18a9",
+            "Value": {
+                "id": "00bf063d-ee27-4db7-b0f0-02f319c3f900",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_111.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "44c98cac-1354-401d-8d1d-432abf4e3039",
+            "Value": {
+                "id": "9d0b719c-1577-49f2-ba88-6d619dafe921",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_162.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "45655972-10e8-408a-b36e-215bed519e1e",
+            "Value": {
+                "id": "8ffe70a5-c7eb-43a8-ae6f-7b9ce4511897",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_128.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "46dfb655-92a2-47f0-a68e-24697c4066d4",
+            "Value": {
+                "id": "64e47e43-f783-4cd2-aaa9-1a97ba1424c3",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_066.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "49d9fc29-0645-4ed7-b6fb-fd202478a429",
+            "Value": {
+                "id": "addc0546-3bc4-4e57-a01f-b1d5397e0697",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_093.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "49edd77c-1f1d-494e-abef-907cebc627e7",
+            "Value": {
+                "id": "eae23c7f-4364-44df-b840-c500fdc9964b",
+                "resourcePath": "views\\49edd77c-1f1d-494e-abef-907cebc627e7.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "49fd6146-d150-4240-8613-d634e1cb4b81",
+            "Value": {
+                "id": "4df0191a-2137-4472-b7cd-9da35de2c3af",
+                "resourcePath": "rooms\\rm_texpack_demo\\rm_texpack_demo.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "4ef269ee-d5cb-41e2-8b02-bcd36d4ab55b",
+            "Value": {
+                "id": "5ec5f017-08c8-45e0-ab32-0e9fba3f300d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_116.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "4f4e1163-e445-4d39-afd1-76e3e46bfdfb",
+            "Value": {
+                "id": "631d2f01-104d-4a54-9fd1-b4aa8f451bd1",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_014.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "50bf89c7-4190-4499-832d-a7344c56dd8b",
+            "Value": {
+                "id": "b0f67360-06ef-48be-82be-0dc4c5ff98b4",
+                "resourcePath": "views\\50bf89c7-4190-4499-832d-a7344c56dd8b.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5340d009-eb06-40fd-b2e2-bf143e57324e",
+            "Value": {
+                "id": "5ed48d7f-eaa5-443b-a47a-0e27d975c4df",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_119.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "5489a22c-a423-4dae-8af2-97d230bf07f8",
+            "Value": {
+                "id": "aca0d10c-9bc4-4645-abb3-f1310073dcb2",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_011.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "55139b70-d565-4137-8c9e-5c049d481f6b",
+            "Value": {
+                "id": "35186ecb-c6ed-46f9-8f1e-1ae2d492827a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_027.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "57fd5774-ec00-49c0-ab19-f320f6e2b639",
+            "Value": {
+                "id": "12d2456a-28f5-4272-9f9f-f770d23cfdea",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_089.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "58231251-d290-46ed-b077-f21eb2332488",
+            "Value": {
+                "id": "7dd36a15-ce85-4689-bbf7-9d1a8945726f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_062.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "595ad292-8fb3-4a12-9cca-c130f6218db8",
+            "Value": {
+                "id": "26e01741-4410-4fd5-a2fb-25b08c17c534",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_069.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "5c65473b-2e25-4c73-a44b-bdcc3a2e5b18",
+            "Value": {
+                "id": "dbb5a153-8efc-48e3-b649-7a0f641433d7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_056.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "5cb3988a-41ed-47ef-96bc-46c701b8f52c",
+            "Value": {
+                "id": "87860421-de22-47a4-9d13-cf0a1fe1584a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_051.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "5d8a7707-4491-4df5-81d6-85bf434b32dd",
+            "Value": {
+                "id": "fcac0b4d-c898-4426-92d7-9e6437afcc63",
+                "resourcePath": "views\\5d8a7707-4491-4df5-81d6-85bf434b32dd.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5de6b0ac-1a61-43ec-ad84-91cb624ece9d",
+            "Value": {
+                "id": "c4ee11f7-0912-4d24-8fda-6c86f4f16f31",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_140.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "5fe813dc-32ee-4f93-9b57-38103021f6c0",
+            "Value": {
+                "id": "e04a87b6-8bc1-4c80-85f9-c77190ae0ddd",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_144.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "60aba4e9-737b-45d9-932a-1f3cea815ef8",
+            "Value": {
+                "id": "680a60db-d8ad-4041-acb3-cf2857abee05",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_148.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "63122c0b-b509-4916-bae4-4ddc6642d5c8",
+            "Value": {
+                "id": "aaae40ca-0f94-4edd-96b6-79ac4b7c051b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_143.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "633ff4c5-d299-45ab-bae8-873dbdaca373",
+            "Value": {
+                "id": "865cd8e4-c995-4fa6-95f4-005b83d00357",
+                "resourcePath": "views\\633ff4c5-d299-45ab-bae8-873dbdaca373.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "65d88f5f-2c2c-41d2-84e4-21b8857f425f",
+            "Value": {
+                "id": "6443d865-1dcf-4e74-99be-06d078b5ffeb",
+                "resourcePath": "extensions\\TexturePack\\TexturePack.yy",
+                "resourceType": "GMExtension"
+            }
+        },
+        {
+            "Key": "671828b4-5d92-4fdd-abae-fc62aa079c82",
+            "Value": {
+                "id": "b7f81e05-7469-4915-b808-33cb382e657b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_125.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "693f881d-115d-43f8-84ff-2597397cdb9c",
+            "Value": {
+                "id": "115f1967-a770-4ec5-b393-3693798fe517",
+                "resourcePath": "views\\693f881d-115d-43f8-84ff-2597397cdb9c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6e223059-830a-4dcb-9f76-af733fac0912",
+            "Value": {
+                "id": "4b942573-7137-4445-a72f-123d92072fed",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_003.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "6fc89cfa-00f9-4999-a0f8-5dc8c0aa2798",
+            "Value": {
+                "id": "b77ff6c0-0ec8-4aa6-83ed-94406f89a6ad",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_100.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "6ff8a93c-e663-42ce-a546-97b2e583179b",
+            "Value": {
+                "id": "f18d57e8-d5d0-4072-bab6-e57d3a0bf81b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_016.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "70736541-1c31-40d6-a017-2d9bc8fe9a85",
+            "Value": {
+                "id": "9a038d4b-71f2-4945-86b0-17089d84ad73",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_103.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "70af311b-4669-4ac2-b95b-fe946a56b186",
+            "Value": {
+                "id": "56377568-d48c-4474-943f-a60e975871dd",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_007.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "72363c2d-5853-4e26-852a-b6c3ac19e4c1",
+            "Value": {
+                "id": "3dc64c68-c07b-42c2-8248-4d1cc6c41cf9",
+                "resourcePath": "views\\72363c2d-5853-4e26-852a-b6c3ac19e4c1.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "72a8b405-b84f-4ed7-969d-a5bbc09ac348",
+            "Value": {
+                "id": "e3ae2a2d-038a-4e04-878c-66aebf330e5e",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_034.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "752bfcd9-2f16-4754-9981-2b69c61034e1",
+            "Value": {
+                "id": "f362bcfa-73d7-4510-acba-ac053420f798",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_090.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "75425ef5-555d-4993-9b3c-7a40b967e661",
+            "Value": {
+                "id": "881f488b-ec22-4f9a-896d-561656a9347a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_123.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "75ac291e-7061-4bcb-8e8a-3b3545332d41",
+            "Value": {
+                "id": "2f077a7f-da2e-4520-838d-5be28c0a0d7a",
+                "resourcePath": "options\\html5\\options_html5.yy",
+                "resourceType": "GMHtml5Options"
+            }
+        },
+        {
+            "Key": "7ab65a8c-da25-4710-83db-3160eb73e9c8",
+            "Value": {
+                "id": "d684e631-c13e-4575-be20-9cc7f796cac5",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_157.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "7ae76ada-019d-48bb-a9b3-92bd84b67edf",
+            "Value": {
+                "id": "63b0df84-e078-4dfb-8470-2397824c793d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_058.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "7cc2466a-a4ad-4775-afd6-e595c5c1ccbd",
+            "Value": {
+                "id": "d1bc0dfe-beb0-4d27-88a0-58e6a7ffae1d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_113.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "7ce0749a-6667-4fe5-83f2-22ccc80b991f",
+            "Value": {
+                "id": "9a9f0efc-e82b-45fb-bdda-d86a4aa581c9",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_006.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "7e7ed027-69ed-4141-bf49-e10f871c9162",
+            "Value": {
+                "id": "27a1f601-7ab6-49bd-a9ff-3ca719930c28",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_150.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "81f46d65-0f38-4efd-942d-eb7cbc71403e",
+            "Value": {
+                "id": "0428bacc-debf-41d9-a3e0-ffcf291e9064",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_094.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "8427047f-9ef8-4c77-89f3-9c20623d07b6",
+            "Value": {
+                "id": "60c40759-60f1-4275-bf7c-63c5b3981c78",
+                "resourcePath": "options\\ios\\options_ios.yy",
+                "resourceType": "GMiOSOptions"
+            }
+        },
+        {
+            "Key": "84461916-2c72-45c6-8bef-13e4b7f25939",
+            "Value": {
+                "id": "97459d24-9745-4669-a44a-8636b203a822",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_141.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "86b1c077-7bda-4126-a4f0-498319230425",
+            "Value": {
+                "id": "c607355a-5115-4437-a0e4-6478df5ea11f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_015.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "8756eec9-9bd4-4514-b98a-a3c60bf35f71",
+            "Value": {
+                "id": "c08c9be1-444d-4a14-b3f7-36f9e98b2e41",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_106.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "888927f7-935b-4c6f-abd6-35cd6e487a0e",
+            "Value": {
+                "id": "7b7aa408-285f-40cf-9c4a-65d095f79d81",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_134.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "8c790253-6e67-4618-a7f9-5bf8b70a8a9f",
+            "Value": {
+                "id": "573f6ea2-9940-4bb5-8354-056f1f367be2",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_127.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "8eb7bc46-c11a-402c-a5e6-7fa7b4c5e6d0",
+            "Value": {
+                "id": "9621b43a-088e-4d93-8b97-0d657e74c580",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_037.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "8f349ba6-3b22-4c53-adaa-b8609f418bee",
+            "Value": {
+                "id": "ac29acca-7097-4845-9007-986dc26df087",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_036.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "91b600d6-b8ac-4290-adee-aa33d0cae7c9",
+            "Value": {
+                "id": "9e55ab22-ef7d-4e96-9a0d-50e48e6bef0f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_139.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "93566aad-c3b3-48a9-8fa7-9c5ee19f74ac",
+            "Value": {
+                "id": "8baf5e7f-736d-4179-bb61-e301a219e319",
+                "resourcePath": "options\\tvos\\options_tvos.yy",
+                "resourceType": "GMtvOSOptions"
+            }
+        },
+        {
+            "Key": "9704ca95-401b-45d7-9fd9-6c5e76bb2638",
+            "Value": {
+                "id": "41470a15-b79a-4739-8b72-bd064689214e",
+                "resourcePath": "views\\9704ca95-401b-45d7-9fd9-6c5e76bb2638.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "977d4d37-e524-465e-a834-104846c84183",
+            "Value": {
+                "id": "0113f6fd-a9db-4c23-ace9-872009c7eeaf",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_115.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "988f549e-29f8-4321-9bac-c6fa5b5268dc",
+            "Value": {
+                "id": "f5da2d53-7d7a-4c01-8b3e-d19099aa89f7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_001.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "9a021d3d-7c45-42ea-9133-f7569f04491c",
+            "Value": {
+                "id": "fd2edf8b-6c2d-4e2b-94fd-c8910fb33c21",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_028.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "9b6ef00c-2f42-4e05-98e8-443c3dcf1308",
+            "Value": {
+                "id": "2c8687a6-23bc-4459-bb36-f9429cb05a46",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_047.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "9bdc2107-b35f-4351-977f-4e8104202395",
+            "Value": {
+                "id": "fc8d2cf4-7ccc-4be0-bc07-e2e6d2013158",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_092.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "9bfe31a4-a29c-46c0-9b76-b1bbb11390f6",
+            "Value": {
+                "id": "62c1db5c-0a45-4353-93b7-2a62cb76f43a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_121.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "9cd7b6ea-ec28-486a-8be5-58404d8bcaa5",
+            "Value": {
+                "id": "23c1f1cb-6f1b-410f-880b-5f005b35950e",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_146.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a0ca5a49-e1e6-4017-af86-cfe8ef21507e",
+            "Value": {
+                "id": "b1409110-5448-44cd-ba2f-f937cfa1817f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_070.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a10937ad-642f-400e-8220-2a96bc65ca7b",
+            "Value": {
+                "id": "7156d5ba-1da2-424b-9e0f-c3c0cd0fc07b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_029.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a128950b-5063-4876-b4a6-b99dbd2ea6d1",
+            "Value": {
+                "id": "dfa9b6f6-fe4c-4ca6-b1a4-29fe8b590c5a",
+                "resourcePath": "options\\amazonfire\\options_amazonfire.yy",
+                "resourceType": "GMAmazonFireOptions"
+            }
+        },
+        {
+            "Key": "a236d00e-6a84-4131-b34b-635c704d43f9",
+            "Value": {
+                "id": "66e79bf0-b688-4816-8271-8d29cbab479c",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_022.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a3bffe50-091e-4383-b2d4-813ecd44d716",
+            "Value": {
+                "id": "01efcafd-330c-4c66-8bae-3b5ae353d049",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_110.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a4139374-0ac1-457d-9687-daaa21ef4a26",
+            "Value": {
+                "id": "8775ad97-6007-450d-94e9-fd20693df70a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_076.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a839f7f7-b892-440c-8879-a397d264541d",
+            "Value": {
+                "id": "c391ef41-f83e-41d0-ab31-f99426b26b18",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_071.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
+            "Value": {
+                "id": "58ae87ad-54f9-47f4-8b0a-e29554875145",
+                "resourcePath": "options\\linux\\options_linux.yy",
+                "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "a92adcb1-4c44-4327-acac-144dfdb1716e",
+            "Value": {
+                "id": "c1cae5a2-c3f6-49a0-aca2-cd5e5f3e441f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_085.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ac590074-0cdf-4924-b30f-6101dd62f169",
+            "Value": {
+                "id": "25243493-cea7-4dc6-bf2a-810bfdf6f4c3",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_159.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ace20dfa-5905-4d48-be54-e55e2e2e82b2",
+            "Value": {
+                "id": "a2a96665-c477-4ffb-bb32-a992cfa4a918",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_096.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ad1dbb9f-3baa-4a36-b626-a06ed3f47851",
+            "Value": {
+                "id": "6b7dfb61-1306-418d-b5e7-a25eb6eff278",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_095.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ae35b829-fb8d-4ba5-a4c7-f18683b76884",
+            "Value": {
+                "id": "d9b5e37c-6e8b-4ef9-8275-50196d25d4cc",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_024.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "aeaa8be0-fc65-44dc-8636-d45f584480ed",
+            "Value": {
+                "id": "100c141f-0c71-4e8f-ace9-a275389daa87",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_135.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "aed41c3c-665c-4b73-ba90-bef7f5c9a5e2",
+            "Value": {
+                "id": "eb8a2256-0851-4e2b-97e2-e86060a3b689",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_105.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b06ff619-48b3-4dc8-b599-0797def61ee0",
+            "Value": {
+                "id": "b24da115-58c2-4faa-8873-aa763c398511",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_124.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b248b8d1-fb50-4375-8215-7f8065d0cecc",
+            "Value": {
+                "id": "2e641e0a-91cc-48c5-ab53-7f34e77c53a9",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_031.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b25a6b5e-3634-469d-9057-49093f34a2a5",
+            "Value": {
+                "id": "5f83c798-af9d-40b9-9aff-0915b20a1368",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_087.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b27e8a07-6859-465f-9391-dbf54ff8d1f9",
+            "Value": {
+                "id": "6dec0138-0ce1-454c-90bf-1322f61cb10e",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_043.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b2e56464-c622-4eb8-8bae-e6da3e0519d0",
+            "Value": {
+                "id": "ae7db148-33ad-4691-b115-cf676a007718",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_053.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b59f4880-c102-42b2-ac24-ce66947867e0",
+            "Value": {
+                "id": "b2da222c-d2ff-4293-aa90-5c52d4863670",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_077.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b5f0e8a4-e015-4dd3-b111-d65448d8597e",
+            "Value": {
+                "id": "2e4b06c8-debe-4007-be4d-836fcc54c151",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_151.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b739ff11-ed27-46ac-abcb-bc17fdd562a5",
+            "Value": {
+                "id": "4a007e0d-a273-47bc-bb95-fd975771e967",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_131.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "b9953ccf-a280-4918-a8de-93d2b2c86aa0",
+            "Value": {
+                "id": "5e7e947e-b157-4155-a99e-ce41ef9e3a93",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_018.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "bc81b460-b4a1-401e-a675-af210174e415",
+            "Value": {
+                "id": "ddda0631-d82a-4a27-b923-566726b242cb",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_002.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "be55e6fa-9ab8-4c8b-ade4-c832dd3ba29b",
+            "Value": {
+                "id": "3d9eaa72-5fcb-4337-b189-a3bd85e48c59",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_118.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "bea8beec-2080-4f70-a5cb-de93e0f00ad6",
+            "Value": {
+                "id": "88edf8e4-0f11-41a7-a4be-c22ba9f916db",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_064.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "bf781935-84d2-4279-b37c-7445e3e9d983",
+            "Value": {
+                "id": "e1bcb892-4a92-491a-a3aa-97c005bca9c3",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_161.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c00db8c3-bac1-4f8c-8831-c257315eb196",
+            "Value": {
+                "id": "e4637882-fd38-45fc-9b84-9ce468cd555b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_104.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c0563521-8c14-4f15-b850-be1e65eac0b7",
+            "Value": {
+                "id": "4487cea5-51af-4fb3-b95b-739de4ee339d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_055.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c19d6b11-e75d-49e5-b8bd-eba23419b164",
+            "Value": {
+                "id": "6a33dacc-7aa3-4adf-8cb0-d325270c70ec",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_112.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c1dec216-60ad-48a5-ac06-4f5dd924a22a",
+            "Value": {
+                "id": "19442c77-62de-416d-aa7d-ecd267b71d73",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_156.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c379ae43-b3ae-4da7-9720-8702e04a3f8a",
+            "Value": {
+                "id": "29b48082-f7b7-4358-a584-237afbb477d7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_091.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c4274712-eeac-49af-82ae-2e88400be207",
+            "Value": {
+                "id": "6e79dfdc-e718-47d7-baa8-58c67463d567",
+                "resourcePath": "views\\c4274712-eeac-49af-82ae-2e88400be207.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c475a179-0c9e-4904-b431-5cd294876887",
+            "Value": {
+                "id": "7131d6d1-bfeb-49c0-8294-664880f1f50d",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_114.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c6afc6e5-8d8f-48cd-b19a-fa3441f66a4a",
+            "Value": {
+                "id": "95eb1565-00bf-452a-bed2-19d35eaaefcc",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_040.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c93e3c9a-eaf0-493f-8da2-b8564edf89c1",
+            "Value": {
+                "id": "c3dd5a21-fd10-4f4b-a735-2c35c0a571f2",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_067.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "c9a91b45-da6e-4ab9-ad39-839c9c185d38",
+            "Value": {
+                "id": "abaebde0-bd42-4e29-84c3-d9a2a299d508",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_099.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "cbc3a2d5-57ca-47e3-b471-e45a7fa2f483",
+            "Value": {
+                "id": "85886fde-7fc1-475a-b4ac-309584913b01",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_026.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "cbe8d29c-9449-4aa3-bfbb-76b6426414a4",
+            "Value": {
+                "id": "afc85a2d-4c35-47df-8c55-adace39eaafe",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_086.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
+            "Value": {
+                "id": "d199b856-8c56-4a58-9996-38e6aa351fd9",
+                "resourcePath": "options\\windows\\options_windows.yy",
+                "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cfe258fc-e85e-470d-b335-b91400f53b18",
+            "Value": {
+                "id": "db54edab-b930-45bd-b3d9-22795d110d13",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_163.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d007dd44-afab-4223-9263-658cc6b7b426",
+            "Value": {
+                "id": "7e88fb26-4229-4802-808b-84db1f43998d",
+                "resourcePath": "objects\\obj_texpack_demo\\obj_texpack_demo.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "d064cad0-2350-442a-afe4-1e66ee26c68e",
+            "Value": {
+                "id": "9b924fd9-5e09-411c-b9d6-85fa3556f9d0",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_030.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d0c9ced4-2ddc-4733-af60-a0219d296150",
+            "Value": {
+                "id": "63a83acc-d2b7-402f-8981-b449e0db6a52",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_084.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d3390dd9-5540-43f9-97c9-a5afca1ecf47",
+            "Value": {
+                "id": "07d7c09d-12d6-434f-b0ad-0a68a55e30ae",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_145.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d5cc0e02-145c-4149-bec4-a3884c73f563",
+            "Value": {
+                "id": "c14b143b-a4e2-429b-ae0b-2dc6152e97a7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_004.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d7ea88f7-2eab-41ae-af8c-d1fc48689a70",
+            "Value": {
+                "id": "8f71e35a-81c1-43a7-b727-c5af6743cd55",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_049.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "d8642027-8fad-432a-b12e-aad689254d9d",
+            "Value": {
+                "id": "8ab66f91-e481-422f-be4f-d77aea7f67b9",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_130.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "da9c884c-0dbc-4d83-bf65-333eb2f8e807",
+            "Value": {
+                "id": "2bbf5909-3f6b-44a2-8082-d4432c98d85b",
+                "resourcePath": "views\\da9c884c-0dbc-4d83-bf65-333eb2f8e807.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "db4e081c-3674-4e15-a303-0e78f0cf130c",
+            "Value": {
+                "id": "41300a69-df56-4929-9758-2f6a1f346815",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_009.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "de6c4472-1b1f-4089-9ff5-0213a7b02a2c",
+            "Value": {
+                "id": "0053e2f9-c1f8-436f-97e6-8a095fa26caf",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_059.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "deeb51d5-e190-4228-8edb-746a4f5cdf9c",
+            "Value": {
+                "id": "94314e92-5642-4ec4-b022-7a80df5d48ba",
+                "resourcePath": "views\\deeb51d5-e190-4228-8edb-746a4f5cdf9c.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e185c6e3-a58a-4946-b896-40acbed442b2",
+            "Value": {
+                "id": "34670057-f76c-49fb-a57e-317ce742a333",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_008.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e1cd51c0-9c92-4eff-8563-e265f10e9cef",
+            "Value": {
+                "id": "1c1b3baa-f1ee-414f-ae9e-d9e9b57b2f28",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_108.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e1fe509c-29e3-483e-841b-78462d314ad8",
+            "Value": {
+                "id": "0cdef0d7-fa6e-4781-9ab1-82eb92fced6e",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_048.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e20846ce-9c1d-4479-9d0d-07247a5fb085",
+            "Value": {
+                "id": "011dc9a0-ba33-47bd-9e7d-83ab3fe33c2c",
+                "resourcePath": "views\\e20846ce-9c1d-4479-9d0d-07247a5fb085.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e290ffd2-09eb-41e5-9cc5-bef71a72e461",
+            "Value": {
+                "id": "c375dba6-4e38-4cba-a0d7-2d5e95e2c7f0",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_152.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
+            "Value": {
+                "id": "d64d41d2-63b6-4038-aac2-c7bebe9c93f2",
+                "resourcePath": "options\\android\\options_android.yy",
+                "resourceType": "GMAndroidOptions"
+            }
+        },
+        {
+            "Key": "e5e60621-e71e-4ade-b339-53ca20ee47e8",
+            "Value": {
+                "id": "50749f47-0e36-4b18-9315-dace85ad212f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_098.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e6709fa3-cb1a-4ca2-a8ea-c0f31f56d0e6",
+            "Value": {
+                "id": "1f401321-ae08-4e63-8208-e3fd06a3bdd2",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_005.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "e9458d18-999a-4151-b71e-c4a3cfe25cfc",
+            "Value": {
+                "id": "733e6a88-cebb-45ab-8c70-6b7893eaeeba",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_012.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "ec38fbdf-37cf-4b81-b719-7ac416a99d50",
+            "Value": {
+                "id": "a7898c42-32b9-4b61-8e57-61e56679c7cb",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_137.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "edabf2ab-2406-4f64-9d5e-c7ea4f9a668c",
+            "Value": {
+                "id": "b3966eca-c333-4ab8-af8e-778fc3c26eb7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_054.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f26a08df-672e-448c-b7ec-665464797f58",
+            "Value": {
+                "id": "667d7d77-4344-48a6-a5fb-137bca953637",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_088.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f418569b-3bdd-4706-a0e4-364317f54032",
+            "Value": {
+                "id": "ece04090-e8e6-42bc-be27-3df8ca71fcfa",
+                "resourcePath": "options\\mac\\options_mac.yy",
+                "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f498e75f-921f-462a-aed2-5b2aa1f945f1",
+            "Value": {
+                "id": "cd96ac3e-1afc-4a4a-83b3-c6b038ba2c2f",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_136.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f5536a52-f7d5-4db3-a479-77c7d3b47771",
+            "Value": {
+                "id": "12d593f2-ca81-4c40-be77-0fc5ab391fc7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_149.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f6415571-9c49-485a-974e-085afc090ba5",
+            "Value": {
+                "id": "a6300ea8-6588-4c43-857a-6885319e854a",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_129.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f7eb60f4-79f1-464e-8285-f8cdedfb1342",
+            "Value": {
+                "id": "7648b1e9-3e89-485a-96d1-d3929ea6179b",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_046.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f8a2590d-6ccf-413c-b97d-a4e7148bc8b0",
+            "Value": {
+                "id": "68da7730-6acf-46a2-a1ba-51638f7008c7",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_080.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "f9166416-ff3d-4744-845e-49c310ce27b5",
+            "Value": {
+                "id": "7facd10f-efca-4328-9054-bf887a89081c",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_050.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "fa1c0fb3-5615-46e9-ba44-5e5e1a356d72",
+            "Value": {
+                "id": "2824d15f-413c-4f09-ab5a-5cce89522592",
+                "resourcePath": "views\\fa1c0fb3-5615-46e9-ba44-5e5e1a356d72.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "fa7ca85e-0468-42fc-bc71-20893b176b09",
+            "Value": {
+                "id": "deaa81fd-5c19-406d-a0a8-ced9bb3621af",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_068.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "fb65f9ff-42ba-46ee-a612-5a97ddac4f8d",
+            "Value": {
+                "id": "d21d5e27-ccb8-48c7-bf25-61de4eeb6ab8",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_097.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "fb802bef-f27f-430b-bb80-98250d040525",
+            "Value": {
+                "id": "64c6d636-3e87-4422-8721-90cca52961e9",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_132.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "fd5bad1e-26c1-452d-8202-a61383f8e5f6",
+            "Value": {
+                "id": "24d58fb9-a3cf-419a-9da1-153aed40642e",
+                "resourcePath": "datafiles_yy\\items\\genericItem_color_102.png.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        }
+    ],
+    "script_order": [
+        
+    ],
+    "tutorial": ""
+}
