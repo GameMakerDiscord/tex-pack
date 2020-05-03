@@ -1,4 +1,4 @@
-// Generated at 2020-05-03 11:01:04 (238ms) for v2.3+
+// Generated at 2020-05-03 16:32:44 (242ms) for v2.3+
 //{ metatype
 globalvar binp_haxe_type_markerValue; binp_haxe_type_markerValue = [];
 globalvar mt_TexEntry; mt_TexEntry = new binp_haxe_class(-1, "TexEntry", TexEntry);
@@ -20,11 +20,11 @@ function TexEntry() constructor {
 	static height = undefined;
 	static origX = undefined;
 	static origY = undefined;
-	static leafA = undefined;
-	static leafB = undefined;
+	static nodeA = undefined;
+	static nodeB = undefined;
 	static insert = method(undefined, TexEntry_insert);
-	this.leafB = undefined;
-	this.leafA = undefined;
+	this.nodeB = undefined;
+	this.nodeA = undefined;
 	this.origY = 0;
 	this.origX = 0;
 	this.x = argument[0];
@@ -35,40 +35,46 @@ function TexEntry() constructor {
 }
 
 function TexEntry_insert() {
-	/// TexEntry_insert(w:real, h:real, ox:real, oy:real)->TexEntry
-	/// @param w:real
-	/// @param h:real
+	/// TexEntry_insert(imgWidth:real, imgHeight:real, ox:real, oy:real)->TexEntry
+	/// @param imgWidth:real
+	/// @param imgHeight:real
 	/// @param ox:real
 	/// @param oy:real
-	var this = self, w = argument[0], h = argument[1], ox = argument[2], oy = argument[3];
-	if (this.leafA != undefined || this.leafB != undefined) {
-		var q;
-		if (this.leafA != undefined) {
-			q = this.leafA.insert(w, h, ox, oy);
-			if (q != undefined) return q;
+	var this = self, imgWidth = argument[0], imgHeight = argument[1];
+	var stack = g_TexEntry_insertStack;
+	ds_stack_clear(stack);
+	ds_stack_push(stack, this);
+	while (!ds_stack_empty(stack)) {
+		var e = ds_stack_pop(stack);
+		if (e.nodeA != undefined) {
+			if (e.nodeB != undefined) ds_stack_push(stack, e.nodeB);
+			ds_stack_push(stack, e.nodeA);
+			continue;
+		} else if (e.nodeB != undefined) {
+			ds_stack_push(stack, e.nodeB);
+			continue;
 		}
-		if (this.leafB != undefined) {
-			q = this.leafB.insert(w, h, ox, oy);
-			if (q != undefined) return q;
+		var entryWidth = e.width;
+		if (imgWidth > entryWidth) continue;
+		var entryHeight = e.height;
+		if (imgHeight > entryHeight) continue;
+		var remWidth = entryWidth - imgWidth;
+		var remHeight = entryHeight - imgHeight;
+		if (remWidth <= remHeight) {
+			e.nodeA = new TexEntry(e.x + imgWidth, e.y, remWidth, imgHeight);
+			e.nodeB = new TexEntry(e.x, e.y + imgHeight, entryWidth, remHeight);
+		} else {
+			e.nodeA = new TexEntry(e.x, e.y + imgHeight, imgWidth, remHeight);
+			e.nodeB = new TexEntry(e.x + imgWidth, e.y, remWidth, entryHeight);
 		}
-		return undefined;
+		e.width = imgWidth;
+		e.height = imgHeight;
+		e.origX = argument[2];
+		e.origY = argument[3];
+		ds_stack_clear(stack);
+		return e;
 	}
-	if (w > this.width) return undefined;
-	if (h > this.height) return undefined;
-	var qw = this.width - w;
-	var qh = this.height - h;
-	if (qw <= qh) {
-		this.leafA = new TexEntry(this.x + w, this.y, qw, h);
-		this.leafB = new TexEntry(this.x, this.y + h, this.width, qh);
-	} else {
-		this.leafA = new TexEntry(this.x, this.y + h, w, qh);
-		this.leafB = new TexEntry(this.x + w, this.y, qw, this.height);
-	}
-	this.width = w;
-	this.height = h;
-	this.origX = ox;
-	this.origY = oy;
-	return this;
+	return undefined;
 }
 
 //}
@@ -246,4 +252,6 @@ function binp_haxe_class() constructor {
 
 //}
 
+// TexEntry:
+globalvar g_TexEntry_insertStack; g_TexEntry_insertStack = ds_stack_create();
 

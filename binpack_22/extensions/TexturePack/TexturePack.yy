@@ -32,6 +32,14 @@
             ],
             "constants": [
                 {
+                    "id": "5b3e6bd9-2ec7-339a-f621-1bf3cc16d8bf",
+                    "modelName": "GMExtensionConstant",
+                    "mvc": "1.0",
+                    "constantName": "tex_entry_insert_stack",
+                    "hidden": false,
+                    "value": "g_tex_entry_insert_stack"
+                },
+                {
                     "id": "2a2af412-4966-0a6f-a0b2-8cd551370bde",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
@@ -80,18 +88,18 @@
                     "value": "6"
                 },
                 {
-                    "id": "11a2fc38-91bd-04da-0392-fc41c00a92a5",
+                    "id": "9a7d9453-41df-40b3-8db9-5aa89896b0f9",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_leaf_a",
+                    "constantName": "tex_entry_node_a",
                     "hidden": false,
                     "value": "7"
                 },
                 {
-                    "id": "a71899d1-c18c-3998-7a12-8fbfa6196023",
+                    "id": "44fbd00d-df33-5a03-59a9-d5fd47b70b04",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_leaf_b",
+                    "constantName": "tex_entry_node_b",
                     "hidden": false,
                     "value": "8"
                 },
@@ -242,7 +250,7 @@
                         2
                     ],
                     "externalName": "tex_entry_insert",
-                    "help": "tex_entry_insert(this:tex_entry, w:real, h:real, ox:real, oy:real)->TexEntry",
+                    "help": "tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)->TexEntry",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_entry_insert",

@@ -20,8 +20,8 @@ while (!ds_queue_empty(vis_queue)) {
 	if (variable_struct_exists(e, "label")) {
 		draw_text_ext(e.x + 3, e.y + 3, e.label, -1, e.width - 6);
 	}
-	if (e.leafA != undefined) ds_queue_enqueue(vis_queue, e.leafA);
-	if (e.leafB != undefined) ds_queue_enqueue(vis_queue, e.leafB);
+	if (e.nodeA != undefined) ds_queue_enqueue(vis_queue, e.nodeA);
+	if (e.nodeB != undefined) ds_queue_enqueue(vis_queue, e.nodeB);
 	if (point_in_rectangle(mouse_x, mouse_y, e.x, e.y, e.x + e.width - 1, e.y + e.height - 1)
 	&& variable_struct_exists(e, "sprite")) {
 		spr = e.sprite;

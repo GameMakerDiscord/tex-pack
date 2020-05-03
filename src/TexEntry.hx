@@ -3,6 +3,8 @@ import gml.Draw;
 import gml.Mathf;
 import gml.assets.Sprite;
 import gml.ds.Color;
+import gml.ds.Queue;
+import gml.ds.Stack;
 import gml.gpu.GPU;
 
 /**
@@ -22,8 +24,8 @@ import gml.gpu.GPU;
 	public var height:Float;
 	public var origX:Float = 0;
 	public var origY:Float = 0;
-	public var leafA:TexEntry = null;
-	public var leafB:TexEntry = null;
+	public var nodeA:TexEntry = null;
+	public var nodeB:TexEntry = null;
 	#if !sfgml.modern
 	public var custom:Dynamic = null;
 	#end
@@ -35,39 +37,60 @@ import gml.gpu.GPU;
 		this.height = h;
 	}
 	
-	public function insert(w:Float, h:Float, ox:Float, oy:Float):TexEntry {
-		//
-		if (leafA != null || leafB != null) {
-			var q:TexEntry;
-			if (leafA != null) {
-				q = leafA.insert(w, h, ox, oy);
-				if (q != null) return q;
+	@:noDoc private static var insertStack:Stack<TexEntry> = new Stack();
+	public function insert(imgWidth:Float, imgHeight:Float, ox:Float, oy:Float):TexEntry {
+		var stack = insertStack;
+		stack.clear();
+		stack.push(this);
+		while (!stack.isEmpty()) {
+			var e = stack.pop();
+			
+			// if this has child nodes, it means that it is filled
+			// and we will look into those instead:
+			if (e.nodeA != null) {
+				if (e.nodeB != null) stack.push(e.nodeB);
+				stack.push(e.nodeA);
+				continue;
+			} else if (e.nodeB != null) {
+				// under normal circumstances, there should not be situations
+				// where your node only has one child attached.
+				stack.push(e.nodeB);
+				continue;
 			}
-			if (leafB != null) {
-				q = leafB.insert(w, h, ox, oy);
-				if (q != null) return q;
+			
+			// make sure we fit:
+			var entryWidth = e.width;
+			if (imgWidth > entryWidth) continue;
+			var entryHeight = e.height;
+			if (imgHeight > entryHeight) continue;
+			
+			// subdivide:
+			var remWidth = entryWidth - imgWidth;
+			var remHeight = entryHeight - imgHeight;
+			if (remWidth <= remHeight) {
+				// +---+---+
+				// | E | A |
+				// +---+---+
+				// |   B   |
+				// +-------+
+				e.nodeA = new TexEntry(e.x + imgWidth, e.y, remWidth, imgHeight);
+				e.nodeB = new TexEntry(e.x, e.y + imgHeight, entryWidth, remHeight);
+			} else {
+				// +---+---+
+				// | E |   |
+				// +---+ B +
+				// | A |   |
+				// +-------+
+				e.nodeA = new TexEntry(e.x, e.y + imgHeight, imgWidth, remHeight);
+				e.nodeB = new TexEntry(e.x + imgWidth, e.y, remWidth, entryHeight);
 			}
-			return null;
+			e.width = imgWidth;
+			e.height = imgHeight;
+			e.origX = ox;
+			e.origY = oy;
+			stack.clear();
+			return e;
 		}
-		
-		// can we fit?
-		if (w > width) return null;
-		if (h > height) return null;
-		
-		//
-		var qw = width - w;
-		var qh = height - h;
-		if (qw <= qh) {
-			leafA = new TexEntry(x + w, y, qw, h);
-			leafB = new TexEntry(x, y + h, width, qh);
-		} else {
-			leafA = new TexEntry(x, y + h, w, qh);
-			leafB = new TexEntry(x + w, y, qw, height);
-		}
-		width = w;
-		height = h;
-		origX = ox;
-		origY = oy;
-		return this;
+		return null;
 	}
 }

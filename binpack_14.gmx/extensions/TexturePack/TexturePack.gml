@@ -1,7 +1,7 @@
 #define tex_page_init
-// Generated at 2020-05-03 10:40:13 (230ms) for v1.4.1804+
+// Generated at 2020-05-03 16:32:40 (216ms) for v1.4.1804+
 //{ prototypes
-globalvar mq_tex_entry; mq_tex_entry = [undefined, /* 1:x */0, /* 2:y */0, /* 3:width */0, /* 4:height */0, /* 5:orig_x */0, /* 6:orig_y */0, /* 7:a */undefined, /* 8:b */undefined, /* 9:custom */undefined];
+globalvar mq_tex_entry; mq_tex_entry = [undefined, /* 1:x */0, /* 2:y */0, /* 3:width */0, /* 4:height */0, /* 5:orig_x */0, /* 6:orig_y */0, /* 7:node_a */undefined, /* 8:node_b */undefined, /* 9:custom */undefined];
 globalvar mq_tex_page; mq_tex_page = [undefined, /* 1:width */0, /* 2:height */0, /* 3:root */undefined, /* 4:sprite */undefined, /* 5:sprites */undefined, /* 6:surface */undefined, /* 7:custom */undefined];
 globalvar mq_tex_sprite; mq_tex_sprite = [undefined, /* 1:images */undefined, /* 2:count */0, /* 3:sprite */undefined, /* 4:custom */undefined];
 globalvar mq_tex_std_haxe_class; mq_tex_std_haxe_class = [undefined, /* 1:marker */undefined, /* 2:index */0, /* 3:name */undefined, /* 4:superClass */undefined, /* 5:constructor */undefined];
@@ -13,6 +13,8 @@ globalvar mt_tex_page; mt_tex_page = tex_std_haxe_class_create(8, "tex_page");
 globalvar mt_tex_sprite; mt_tex_sprite = tex_std_haxe_class_create(9, "tex_sprite");
 globalvar mt_tex_std_haxe_class; mt_tex_std_haxe_class = tex_std_haxe_class_create(11, "tex_std_haxe_class");
 //}
+// tex_entry:
+globalvar g_tex_entry_insert_stack; g_tex_entry_insert_stack = ds_stack_create();
 
 //{ tex_entry
 
@@ -21,8 +23,8 @@ globalvar mt_tex_std_haxe_class; mt_tex_std_haxe_class = tex_std_haxe_class_crea
 var this = [mt_tex_entry];
 array_copy(this, 1, mq_tex_entry, 1, 9);
 this[@9/* custom */] = undefined;
-this[@8/* b */] = undefined;
-this[@7/* a */] = undefined;
+this[@8/* node_b */] = undefined;
+this[@7/* node_a */] = undefined;
 this[@6/* orig_y */] = 0;
 this[@5/* orig_x */] = 0;
 this[@1/* x */] = argument[0];
@@ -32,36 +34,42 @@ this[@4/* height */] = argument[3];
 return this;
 
 #define tex_entry_insert
-// tex_entry_insert(this:tex_entry, w:real, h:real, ox:real, oy:real)->TexEntry
-var this = argument[0], w = argument[1], h = argument[2], ox = argument[3], oy = argument[4];
-if (this[7/* a */] != undefined || this[8/* b */] != undefined) {
-	var q;
-	if (this[7/* a */] != undefined) {
-		q = tex_entry_insert(this[7/* a */], w, h, ox, oy);
-		if (q != undefined) return q;
+// tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)->TexEntry
+var this = argument[0], imgWidth = argument[1], imgHeight = argument[2];
+var stack = g_tex_entry_insert_stack;
+ds_stack_clear(stack);
+ds_stack_push(stack, this);
+while (!ds_stack_empty(stack)) {
+	var e = ds_stack_pop(stack);
+	if (e[7/* node_a */] != undefined) {
+		if (e[8/* node_b */] != undefined) ds_stack_push(stack, e[8/* node_b */]);
+		ds_stack_push(stack, e[7/* node_a */]);
+		continue;
+	} else if (e[8/* node_b */] != undefined) {
+		ds_stack_push(stack, e[8/* node_b */]);
+		continue;
 	}
-	if (this[8/* b */] != undefined) {
-		q = tex_entry_insert(this[8/* b */], w, h, ox, oy);
-		if (q != undefined) return q;
+	var entryWidth = e[3/* width */];
+	if (imgWidth > entryWidth) continue;
+	var entryHeight = e[4/* height */];
+	if (imgHeight > entryHeight) continue;
+	var remWidth = entryWidth - imgWidth;
+	var remHeight = entryHeight - imgHeight;
+	if (remWidth <= remHeight) {
+		e[@7/* node_a */] = tex_entry_create(e[1/* x */] + imgWidth, e[2/* y */], remWidth, imgHeight);
+		e[@8/* node_b */] = tex_entry_create(e[1/* x */], e[2/* y */] + imgHeight, entryWidth, remHeight);
+	} else {
+		e[@7/* node_a */] = tex_entry_create(e[1/* x */], e[2/* y */] + imgHeight, imgWidth, remHeight);
+		e[@8/* node_b */] = tex_entry_create(e[1/* x */] + imgWidth, e[2/* y */], remWidth, entryHeight);
 	}
-	return undefined;
+	e[@3/* width */] = imgWidth;
+	e[@4/* height */] = imgHeight;
+	e[@5/* orig_x */] = argument[3];
+	e[@6/* orig_y */] = argument[4];
+	ds_stack_clear(stack);
+	return e;
 }
-if (w > this[3/* width */]) return undefined;
-if (h > this[4/* height */]) return undefined;
-var qw = this[3/* width */] - w;
-var qh = this[4/* height */] - h;
-if (qw <= qh) {
-	this[@7/* a */] = tex_entry_create(this[1/* x */] + w, this[2/* y */], qw, h);
-	this[@8/* b */] = tex_entry_create(this[1/* x */], this[2/* y */] + h, this[3/* width */], qh);
-} else {
-	this[@7/* a */] = tex_entry_create(this[1/* x */], this[2/* y */] + h, w, qh);
-	this[@8/* b */] = tex_entry_create(this[1/* x */] + w, this[2/* y */], qw, this[4/* height */]);
-}
-this[@3/* width */] = w;
-this[@4/* height */] = h;
-this[@5/* orig_x */] = ox;
-this[@6/* orig_y */] = oy;
-return this;
+return undefined;
 
 //}
 

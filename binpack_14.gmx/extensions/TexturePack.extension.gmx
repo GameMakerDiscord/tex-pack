@@ -72,7 +72,7 @@
           <name>tex_entry_insert</name>
           <externalName>tex_entry_insert</externalName>
           <kind>11</kind>
-          <help>tex_entry_insert(this:tex_entry, w:real, h:real, ox:real, oy:real)-&gt;TexEntry</help>
+          <help>tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)-&gt;TexEntry</help>
           <returnType>2</returnType>
           <argCount>5</argCount>
           <args>
@@ -213,6 +213,11 @@
       </functions>
       <constants>
         <constant>
+          <name>tex_entry_insert_stack</name>
+          <value>g_tex_entry_insert_stack</value>
+          <hidden>-1</hidden>
+        </constant>
+        <constant>
           <name>tex_entry_x</name>
           <value>1</value>
           <hidden>0</hidden>
@@ -273,22 +278,22 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_a</name>
+          <name>tex_entry_node_a</name>
           <value>7</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_a /* (index)  */</name>
+          <name>tex_entry_node_a /* (index)  */</name>
           <value>7</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_b</name>
+          <name>tex_entry_node_b</name>
           <value>8</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_b /* (index)  */</name>
+          <name>tex_entry_node_b /* (index)  */</name>
           <value>8</value>
           <hidden>0</hidden>
         </constant>
