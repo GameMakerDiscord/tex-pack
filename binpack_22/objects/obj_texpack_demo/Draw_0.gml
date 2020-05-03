@@ -1,4 +1,10 @@
-draw_sprite_ext(tpage[tex_page_sprite], 0, 0, 0, 1, 1, 0, -1, 0.3);
+var px = spr_texpack_demo;
+var tps = tpage[tex_page_sprite];
+draw_sprite_ext(tps,0, 0,0, 1,1, 0, c_white,0.3);
+var tpw = sprite_get_width(tps);
+var tph = sprite_get_height(tps);
+draw_sprite_stretched(px,0, tpw,0, 1, tph);
+draw_sprite_stretched(px,0, 0,tph, tpw + 1, 1);
 
 //
 draw_set_font(fnt_texpack_demo);
@@ -11,14 +17,20 @@ while (!ds_queue_empty(vis_queue)) {
 	var ey = e[tex_entry_y];
 	var ew = e[tex_entry_width];
 	var eh = e[tex_entry_height];
-	draw_rectangle(ex + 1, ey + 1, ex + ew - 1, ey + eh - 1, true);
+	//
+	if (ew > 1 && eh > 1) {
+		draw_sprite_stretched(px,0, ex, ey, ew - 1, 1);
+		draw_sprite_stretched(px,0, ex, ey + 1, 1, eh - 2);
+	}
+	//
+	//draw_rectangle(ex + 1, ey + 1, ex + ew - 1, ey + eh - 1, true);
 	var e_has_custom = array_length_1d(e) > tex_entry_custom + 1;
 	if (e_has_custom) {
 		draw_text_ext(ex + 3, ey + 3, e[tex_entry_custom], -1, ew - 6);
 	}
-	var ea = e[tex_entry_leaf_a];
+	var ea = e[tex_entry_node_a];
 	if (ea != undefined) ds_queue_enqueue(vis_queue, ea);
-	var eb = e[tex_entry_leaf_b];
+	var eb = e[tex_entry_node_b];
 	if (eb != undefined) ds_queue_enqueue(vis_queue, eb);
 	if (point_in_rectangle(mouse_x, mouse_y, ex, ey, ex + ew - 1, ey + eh - 1)
 	&& e_has_custom) {

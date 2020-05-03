@@ -6,7 +6,7 @@
     "path": "folders/binpack demo.yy",
   },
   "resourceVersion": "1.0",
-  "name": "binpack",
+  "name": "scr_texpack",
   "tags": [],
   "resourceType": "GMScript",
 }

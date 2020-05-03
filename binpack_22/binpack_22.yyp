@@ -1375,6 +1375,14 @@
             }
         },
         {
+            "Key": "dfbad9be-53f3-4d06-b7a5-0e3090263d6e",
+            "Value": {
+                "id": "7a8556c7-2170-4d42-a8fa-c7e1a64df0e8",
+                "resourcePath": "sprites\\spr_texpack_demo\\spr_texpack_demo.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e185c6e3-a58a-4946-b896-40acbed442b2",
             "Value": {
                 "id": "34670057-f76c-49fb-a57e-317ce742a333",

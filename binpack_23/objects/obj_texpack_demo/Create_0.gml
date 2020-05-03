@@ -3,6 +3,7 @@
 tpage = new TexPage(2048, 1024);
 var f = file_find_first("items/*.png", 0);
 items = {};
+var found = 0;
 for (; f != ""; f = file_find_next()) {
 	var name = filename_change_ext(f, "");
 	var sp = tpage.add("items/" + f, 1, 0, 0);
@@ -20,6 +21,7 @@ for (; f != ""; f = file_find_next()) {
 		}
 	}
 	variable_struct_set(items, name, sp);
+	//if (++found >= 8) break;
 }
 file_find_close();
 surface_save(tpage.surface, "surf.png");

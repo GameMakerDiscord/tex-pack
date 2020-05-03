@@ -131,7 +131,7 @@
     "path": "folders/binpack demo.yy",
   },
   "resourceVersion": "1.0",
-  "name": "fnt_test",
+  "name": "fnt_texpack_demo",
   "tags": [],
   "resourceType": "GMFont",
 }

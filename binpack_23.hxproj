@@ -4,7 +4,7 @@
   <output>
     <movie outputType="Application" />
     <movie input="" />
-    <movie path="binpack_23\scripts\binpack\binpack.gml._" />
+    <movie path="binpack_23\scripts\scr_texpack\scr_texpack.gml._" />
     <movie fps="0" />
     <movie width="0" />
     <movie height="0" />

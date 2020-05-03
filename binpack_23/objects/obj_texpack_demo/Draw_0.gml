@@ -1,15 +1,22 @@
-/// @description Insert description here
-// You can write your code in this editor
+// draw the texture page:
+var px = spr_texpack_demo;
 draw_sprite_ext(tpage.sprite, 0, 0, 0, 1, 1, 0, -1, 0.3);
+var tpw = sprite_get_width(tpage.sprite);
+var tph = sprite_get_height(tpage.sprite);
+draw_sprite_stretched(px,0, tpw,0, 1, tph);
+draw_sprite_stretched(px,0, 0,tph, tpw + 1, 1);
 
 //
-draw_set_font(fnt_test);
+draw_set_font(fnt_texpack_demo);
 ds_queue_clear(vis_queue);
 ds_queue_enqueue(vis_queue, tpage.root);
 var spr = undefined, img = -1;
 while (!ds_queue_empty(vis_queue)) {
 	var e = ds_queue_dequeue(vis_queue);
-	draw_rectangle(e.x + 1, e.y + 1, e.x + e.width - 1, e.y + e.height - 1, true);
+	if (e.width > 1 && e.height > 1) {
+		draw_sprite_stretched(px,0, e.x, e.y, e.width - 1, 1);
+		draw_sprite_stretched(px,0, e.x, e.y + 1, 1, e.height - 2);
+	}
 	if (variable_struct_exists(e, "label")) {
 		draw_text_ext(e.x + 3, e.y + 3, e.label, -1, e.width - 6);
 	}
