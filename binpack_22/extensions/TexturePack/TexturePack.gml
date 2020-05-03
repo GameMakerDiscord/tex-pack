@@ -1,9 +1,9 @@
 #define tex_page_init
-// Generated at 2020-05-03 16:55:39 (212ms) for v2.2.5+
+// Generated at 2020-05-03 21:21:44 (299ms) for v2.2.5+
 //{ prototypes
-globalvar mq_tex_entry; mq_tex_entry = [undefined, /* 1:x */0, /* 2:y */0, /* 3:width */0, /* 4:height */0, /* 5:orig_x */0, /* 6:orig_y */0, /* 7:node_a */undefined, /* 8:node_b */undefined, /* 9:custom */undefined];
+globalvar mq_tex_entry; mq_tex_entry = [undefined, /* 1:left */0, /* 2:top */0, /* 3:width */0, /* 4:height */0, /* 5:xoffset */0, /* 6:yoffset */0, /* 7:node_a */undefined, /* 8:node_b */undefined, /* 9:custom */undefined];
 globalvar mq_tex_page; mq_tex_page = [undefined, /* 1:width */0, /* 2:height */0, /* 3:root */undefined, /* 4:sprite */undefined, /* 5:sprites */undefined, /* 6:surface */undefined, /* 7:custom */undefined];
-globalvar mq_tex_sprite; mq_tex_sprite = [undefined, /* 1:images */undefined, /* 2:count */0, /* 3:sprite */undefined, /* 4:custom */undefined];
+globalvar mq_tex_sprite; mq_tex_sprite = [undefined, /* 1:images */undefined, /* 2:count */0, /* 3:sprite */undefined, /* 4:xoffset */0, /* 5:yoffset */0, /* 6:custom */undefined];
 globalvar mq_tex_std_haxe_class; mq_tex_std_haxe_class = [undefined, /* 1:marker */undefined, /* 2:index */0, /* 3:name */undefined, /* 4:superClass */undefined, /* 5:constructor */undefined];
 //}
 //{ metatype
@@ -25,16 +25,16 @@ array_copy(this, 1, mq_tex_entry, 1, 9);
 this[@9/* custom */] = undefined;
 this[@8/* node_b */] = undefined;
 this[@7/* node_a */] = undefined;
-this[@6/* orig_y */] = 0;
-this[@5/* orig_x */] = 0;
-this[@1/* x */] = argument[0];
-this[@2/* y */] = argument[1];
+this[@6/* yoffset */] = 0;
+this[@5/* xoffset */] = 0;
+this[@1/* left */] = argument[0];
+this[@2/* top */] = argument[1];
 this[@3/* width */] = argument[2];
 this[@4/* height */] = argument[3];
 return this;
 
-#define tex_entry_insert
-// tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)->TexEntry
+#define tex_entry_add
+// tex_entry_add(this:tex_entry, imgWidth:real, imgHeight:real)->TexEntry
 var this = argument[0], imgWidth = argument[1], imgHeight = argument[2];
 var stack = g_tex_entry_insert_stack;
 ds_stack_clear(stack);
@@ -56,16 +56,14 @@ while (!ds_stack_empty(stack)) {
 	var remWidth = entryWidth - imgWidth;
 	var remHeight = entryHeight - imgHeight;
 	if (remWidth <= remHeight) {
-		e[@7/* node_a */] = tex_entry_create(e[1/* x */] + imgWidth, e[2/* y */], remWidth, imgHeight);
-		e[@8/* node_b */] = tex_entry_create(e[1/* x */], e[2/* y */] + imgHeight, entryWidth, remHeight);
+		e[@7/* node_a */] = tex_entry_create(e[1/* left */] + imgWidth, e[2/* top */], remWidth, imgHeight);
+		e[@8/* node_b */] = tex_entry_create(e[1/* left */], e[2/* top */] + imgHeight, entryWidth, remHeight);
 	} else {
-		e[@7/* node_a */] = tex_entry_create(e[1/* x */], e[2/* y */] + imgHeight, imgWidth, remHeight);
-		e[@8/* node_b */] = tex_entry_create(e[1/* x */] + imgWidth, e[2/* y */], remWidth, entryHeight);
+		e[@7/* node_a */] = tex_entry_create(e[1/* left */], e[2/* top */] + imgHeight, imgWidth, remHeight);
+		e[@8/* node_b */] = tex_entry_create(e[1/* left */] + imgWidth, e[2/* top */], remWidth, entryHeight);
 	}
 	e[@3/* width */] = imgWidth;
 	e[@4/* height */] = imgHeight;
-	e[@5/* orig_x */] = argument[3];
-	e[@6/* orig_y */] = argument[4];
 	ds_stack_clear(stack);
 	return e;
 }
@@ -116,21 +114,25 @@ if (this[6/* surface */] != -1) {
 
 #define tex_page_add
 // tex_page_add(this:tex_page, fname:string, imgNumb:int, ox:real, oy:real)->TexSprite
-var this = argument[0], imgNumb = argument[2];
+var this = argument[0], imgNumb = argument[2], ox = argument[3], oy = argument[4];
 if (this[4/* sprite */] != -1) show_error("This texture page is already finalized", false);
 var spr = sprite_add(argument[1], imgNumb, false, false, 0, 0);
 if (spr == -1) return undefined;
 var sw = sprite_get_width(spr);
 var sh = sprite_get_height(spr);
-var qs = tex_sprite_create(imgNumb);
+var qs = tex_sprite_create(imgNumb, ox, oy);
 var ob = gpu_get_blendmode_ext();
 gpu_set_blendmode_ext(2, 1);
 surface_set_target(this[6/* surface */]);
 var i = 0;
 for (var _g1 = imgNumb; i < _g1; i++) {
-	var qe = tex_entry_insert(this[3/* root */], sw, sh, argument[3], argument[4]);
+	var qe = tex_entry_add(this[3/* root */], sw, sh);
 	tex_std_haxe_boot_wset(qs[1/* images */], i, qe);
-	if (qe != undefined) draw_sprite(spr, 0, qe[1/* x */], qe[2/* y */]);
+	if (qe != undefined) {
+		qe[@5/* xoffset */] = ox;
+		qe[@6/* yoffset */] = oy;
+		draw_sprite(spr, 0, qe[1/* left */], qe[2/* top */]);
+	}
 }
 gpu_set_blendmode_ext(ob);
 surface_reset_target();
@@ -156,15 +158,31 @@ surface_free(this[6/* surface */]);
 //{ tex_sprite
 
 #define tex_sprite_create
-// tex_sprite_create(count:int)
+// tex_sprite_create(count:int, xofs:real, yofs:real)
 var this = [mt_tex_sprite];
-array_copy(this, 1, mq_tex_sprite, 1, 4);
+array_copy(this, 1, mq_tex_sprite, 1, 6);
 var count = argument[0];
-this[@4/* custom */] = undefined;
+this[@6/* custom */] = undefined;
 this[@3/* sprite */] = -1;
 this[@2/* count */] = count;
+this[@4/* xoffset */] = argument[1];
+this[@5/* yoffset */] = argument[2];
 this[@1/* images */] = array_create(count, undefined);
 return this;
+
+#define tex_sprite_set_offset
+// tex_sprite_set_offset(this:tex_sprite, xo:real, yo:real)
+var this = argument[0];
+var dx = argument[1] - this[4/* xoffset */];
+var dy = argument[2] - this[5/* yoffset */];
+var i = 0;
+for (var _g1 = this[2/* count */]; i < _g1; i++) {
+	var e = tex_std_haxe_boot_wget(this[1/* images */], i);
+	if (e != undefined) {
+		e[@5/* xoffset */] += dx;
+		e[@6/* yoffset */] += dy;
+	}
+}
 
 #define tex_sprite_draw
 // tex_sprite_draw(this:tex_sprite, subimg:real, l_x:real, l_y:real)
@@ -173,7 +191,7 @@ var i = (argument[1] | 0) % this[2/* count */];
 if (i < 0) i += this[2/* count */];
 var e = tex_std_haxe_boot_wget(this[1/* images */], i);
 if (e == undefined) return 0;
-draw_sprite_part(this[3/* sprite */], 0, e[1/* x */], e[2/* y */], e[3/* width */], e[4/* height */], argument[2] - e[5/* orig_x */], argument[3] - e[6/* orig_y */]);
+draw_sprite_part(this[3/* sprite */], 0, e[1/* left */], e[2/* top */], e[3/* width */], e[4/* height */], argument[2] - e[5/* xoffset */], argument[3] - e[6/* yoffset */]);
 
 #define tex_sprite_draw_ext
 // tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)
@@ -184,9 +202,40 @@ var e = tex_std_haxe_boot_wget(this[1/* images */], i);
 if (e == undefined) return 0;
 var rx = lengthdir_x(1, rot);
 var ry = lengthdir_y(1, rot);
-var ox = -e[5/* orig_x */] * scaleX;
-var oy = -e[6/* orig_y */] * scaleY;
-draw_sprite_general(this[3/* sprite */], 0, e[1/* x */], e[2/* y */], e[3/* width */], e[4/* height */], argument[2] + rx * ox - ry * oy, argument[3] + ry * ox + rx * oy, scaleX, scaleY, rot, col, col, col, col, argument[8]);
+var ox = -e[5/* xoffset */] * scaleX;
+var oy = -e[6/* yoffset */] * scaleY;
+draw_sprite_general(this[3/* sprite */], 0, e[1/* left */], e[2/* top */], e[3/* width */], e[4/* height */], argument[2] + rx * ox - ry * oy, argument[3] + ry * ox + rx * oy, scaleX, scaleY, rot, col, col, col, col, argument[8]);
+
+#define tex_sprite_draw_part
+// tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real)
+var this = argument[0];
+var i = (argument[1] | 0) % this[2/* count */];
+if (i < 0) i += this[2/* count */];
+var e = tex_std_haxe_boot_wget(this[1/* images */], i);
+if (e == undefined) return 0;
+draw_sprite_part(this[3/* sprite */], 0, e[1/* left */] + argument[2], e[2/* top */] + argument[3], argument[4], argument[5], argument[6], argument[7]);
+
+#define tex_sprite_draw_part_ext
+// tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, a:real)
+var this = argument[0], rot = argument[10], c = argument[11];
+var i = (argument[1] | 0) % this[2/* count */];
+if (i < 0) i += this[2/* count */];
+var e = tex_std_haxe_boot_wget(this[1/* images */], i);
+if (e == undefined) return 0;
+var rx = lengthdir_x(1, rot);
+var ry = lengthdir_y(1, rot);
+draw_sprite_general(this[3/* sprite */], 0, e[1/* left */] + argument[2], e[2/* top */] + argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], rot, c, c, c, c, argument[12]);
+
+#define tex_sprite_draw_general
+// tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)
+var this = argument[0], rot = argument[10];
+var i = (argument[1] | 0) % this[2/* count */];
+if (i < 0) i += this[2/* count */];
+var e = tex_std_haxe_boot_wget(this[1/* images */], i);
+if (e == undefined) return 0;
+var rx = lengthdir_x(1, rot);
+var ry = lengthdir_y(1, rot);
+draw_sprite_general(this[3/* sprite */], 0, e[1/* left */] + argument[2], e[2/* top */] + argument[3], argument[4], argument[5], argument[6], argument[7], argument[8], argument[9], rot, argument[11], argument[12], argument[13], argument[14], argument[15]);
 
 //}
 

@@ -69,15 +69,13 @@
           </args>
         </function>
         <function>
-          <name>tex_entry_insert</name>
-          <externalName>tex_entry_insert</externalName>
+          <name>tex_entry_add</name>
+          <externalName>tex_entry_add</externalName>
           <kind>11</kind>
-          <help>tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)-&gt;TexEntry</help>
+          <help>tex_entry_add(this:tex_entry, imgWidth:real, imgHeight:real)-&gt;TexEntry</help>
           <returnType>2</returnType>
-          <argCount>5</argCount>
+          <argCount>3</argCount>
           <args>
-            <arg>2</arg>
-            <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
@@ -87,7 +85,7 @@
           <name>tex_page_create</name>
           <externalName>tex_page_create</externalName>
           <kind>11</kind>
-          <help>tex_page_create(w:int, h:int)</help>
+          <help>tex_page_create(w:int, h:int)// * Creates a new, empty texture page of specified size.</help>
           <returnType>2</returnType>
           <argCount>2</argCount>
           <args>
@@ -110,7 +108,7 @@
           <name>tex_page_add</name>
           <externalName>tex_page_add</externalName>
           <kind>11</kind>
-          <help>tex_page_add(this:tex_page, fname:string, imgNumb:int, ox:real, oy:real)-&gt;TexSprite</help>
+          <help>tex_page_add(this:tex_page, fname:string, imgNumb:int, ox:real, oy:real)-&gt;TexSprite// * Basically `sprite_add`, but for texture pages.</help>
           <returnType>2</returnType>
           <argCount>5</argCount>
           <args>
@@ -136,10 +134,25 @@
           <name>tex_sprite_create</name>
           <externalName>tex_sprite_create</externalName>
           <kind>11</kind>
-          <help>tex_sprite_create(count:int)</help>
+          <help>tex_sprite_create(count:int, xofs:real, yofs:real)// * Generally you shouldn't have to instantiate sprites manually.</help>
           <returnType>2</returnType>
-          <argCount>1</argCount>
+          <argCount>3</argCount>
           <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>tex_sprite_set_offset</name>
+          <externalName>tex_sprite_set_offset</externalName>
+          <kind>11</kind>
+          <help>tex_sprite_set_offset(this:tex_sprite, xo:real, yo:real)// * Updates the origin of the sprite.</help>
+          <returnType>2</returnType>
+          <argCount>3</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
             <arg>2</arg>
           </args>
         </function>
@@ -161,10 +174,77 @@
           <name>tex_sprite_draw_ext</name>
           <externalName>tex_sprite_draw_ext</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)</help>
+          <help>tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)// Equivalent of `draw_sprite_ext`</help>
           <returnType>2</returnType>
           <argCount>9</argCount>
           <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>tex_sprite_draw_part</name>
+          <externalName>tex_sprite_draw_part</externalName>
+          <kind>11</kind>
+          <help>tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real)// Equivalent of `draw_sprite_part`</help>
+          <returnType>2</returnType>
+          <argCount>8</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>tex_sprite_draw_part_ext</name>
+          <externalName>tex_sprite_draw_part_ext</externalName>
+          <kind>11</kind>
+          <help>tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, a:real)// Equivalent of `draw_sprite_part_ext`, except with angle, because why not.</help>
+          <returnType>2</returnType>
+          <argCount>13</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>tex_sprite_draw_general</name>
+          <externalName>tex_sprite_draw_general</externalName>
+          <kind>11</kind>
+          <help>tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)// Equivalent of `draw_sprite_general`</help>
+          <returnType>2</returnType>
+          <argCount>16</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
+            <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
             <arg>2</arg>
@@ -218,22 +298,22 @@
           <hidden>-1</hidden>
         </constant>
         <constant>
-          <name>tex_entry_x</name>
+          <name>tex_entry_left</name>
           <value>1</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_x /* (index)  */</name>
+          <name>tex_entry_left /* (index) @dmdPrefix The following define a rectangle within the texture page: */</name>
           <value>1</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_y</name>
+          <name>tex_entry_top</name>
           <value>2</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_y /* (index)  */</name>
+          <name>tex_entry_top /* (index)  */</name>
           <value>2</value>
           <hidden>0</hidden>
         </constant>
@@ -258,22 +338,22 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_orig_x</name>
+          <name>tex_entry_xoffset</name>
           <value>5</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_orig_x /* (index)  */</name>
+          <name>tex_entry_xoffset /* (index) @dmdPrefix The following define the subimage's origin: */</name>
           <value>5</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_orig_y</name>
+          <name>tex_entry_yoffset</name>
           <value>6</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_orig_y /* (index)  */</name>
+          <name>tex_entry_yoffset /* (index)  */</name>
           <value>6</value>
           <hidden>0</hidden>
         </constant>
@@ -283,7 +363,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_node_a /* (index)  */</name>
+          <name>tex_entry_node_a /* (index) @dmdPrefix The following hold the child nodes (if any): */</name>
           <value>7</value>
           <hidden>0</hidden>
         </constant>
@@ -303,7 +383,8 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_entry_custom /* (index)  */</name>
+          <name>tex_entry_custom /* (index) * Can be used as a starting offset for custom properties.
+	 * @dmdPrefix --- */</name>
           <value>9</value>
           <hidden>0</hidden>
         </constant>
@@ -313,7 +394,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_width /* (index)  */</name>
+          <name>tex_page_width /* (index) Read-only; holds the width of this texture page */</name>
           <value>1</value>
           <hidden>0</hidden>
         </constant>
@@ -323,7 +404,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_height /* (index)  */</name>
+          <name>tex_page_height /* (index) Read-only; holds the height of this texture page */</name>
           <value>2</value>
           <hidden>0</hidden>
         </constant>
@@ -333,7 +414,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_root /* (index)  */</name>
+          <name>tex_page_root /* (index) Holds the top-level texture page entry node */</name>
           <value>3</value>
           <hidden>0</hidden>
         </constant>
@@ -343,7 +424,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_sprite /* (index)  */</name>
+          <name>tex_page_sprite /* (index) Once [finalized](finalize), holds the generated sprite */</name>
           <value>4</value>
           <hidden>0</hidden>
         </constant>
@@ -353,7 +434,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_sprites /* (index)  */</name>
+          <name>tex_page_sprites /* (index) An array of [sprites](TexSprite) belonging to this texture page. */</name>
           <value>5</value>
           <hidden>0</hidden>
         </constant>
@@ -363,7 +444,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_surface /* (index)  */</name>
+          <name>tex_page_surface /* (index) The temporary surface holding the sprites. Is destroyed on [finalize]. */</name>
           <value>6</value>
           <hidden>0</hidden>
         </constant>
@@ -373,7 +454,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_page_custom /* (index)  */</name>
+          <name>tex_page_custom /* (index) * Can be used as a starting offset for custom properties. */</name>
           <value>7</value>
           <hidden>0</hidden>
         </constant>
@@ -383,7 +464,8 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_sprite_images /* (index)  */</name>
+          <name>tex_sprite_images /* (index) * An array of texture page entries for each sprite frame.  
+	 * If something couldn't fit, an item may be `undefined`. */</name>
           <value>1</value>
           <hidden>0</hidden>
         </constant>
@@ -393,7 +475,7 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_sprite_count /* (index)  */</name>
+          <name>tex_sprite_count /* (index) (read-only) The number of subimages. */</name>
           <value>2</value>
           <hidden>0</hidden>
         </constant>
@@ -403,18 +485,39 @@
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_sprite_sprite /* (index)  */</name>
+          <name>tex_sprite_sprite /* (index) Once [finalized](TexPage.finalize), holds the actual (GameMaker) sprite. */</name>
           <value>3</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_sprite_custom</name>
+          <name>tex_sprite_xoffset</name>
           <value>4</value>
           <hidden>0</hidden>
         </constant>
         <constant>
-          <name>tex_sprite_custom /* (index)  */</name>
+          <name>tex_sprite_xoffset /* (index) (read-only) Sprite's origin X. */</name>
           <value>4</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>tex_sprite_yoffset</name>
+          <value>5</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>tex_sprite_yoffset /* (index) (read-only) Sprite's origin Y. */</name>
+          <value>5</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>tex_sprite_custom</name>
+          <value>6</value>
+          <hidden>0</hidden>
+        </constant>
+        <constant>
+          <name>tex_sprite_custom /* (index) * Can be used as a starting offset for custom properties.
+	 * @dmdPrefix --- */</name>
+          <value>6</value>
           <hidden>0</hidden>
         </constant>
       </constants>

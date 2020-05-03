@@ -14,15 +14,15 @@ var spr = undefined, img = -1;
 while (!ds_queue_empty(vis_queue)) {
 	var e = ds_queue_dequeue(vis_queue);
 	if (e.width > 1 && e.height > 1) {
-		draw_sprite_stretched(px,0, e.x, e.y, e.width - 1, 1);
-		draw_sprite_stretched(px,0, e.x, e.y + 1, 1, e.height - 2);
+		draw_sprite_stretched(px,0, e.left, e.top, e.width - 1, 1);
+		draw_sprite_stretched(px,0, e.left, e.top + 1, 1, e.height - 2);
 	}
 	if (variable_struct_exists(e, "label")) {
-		draw_text_ext(e.x + 3, e.y + 3, e.label, -1, e.width - 6);
+		draw_text_ext(e.left + 3, e.top + 3, e.label, -1, e.width - 6);
 	}
 	if (e.nodeA != undefined) ds_queue_enqueue(vis_queue, e.nodeA);
 	if (e.nodeB != undefined) ds_queue_enqueue(vis_queue, e.nodeB);
-	if (point_in_rectangle(mouse_x, mouse_y, e.x, e.y, e.x + e.width - 1, e.y + e.height - 1)
+	if (point_in_rectangle(mouse_x, mouse_y, e.left, e.top, e.left + e.width - 1, e.top + e.height - 1)
 	&& variable_struct_exists(e, "sprite")) {
 		spr = e.sprite;
 		img = e.index;

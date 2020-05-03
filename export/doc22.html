@@ -1,0 +1,566 @@
+<html><head>
+<meta charset="UTF-8">
+<title>tex-pack</title>
+<meta name="viewport" content="width=device-width" />
+<meta name="livenode" content="#doc" />
+<meta property="theme-color" content="#FFF037" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="en_us" />
+<meta property="og:site_name" content="YellowAfterlife" />
+<meta property="og:title" content="tex-pack" />
+<script type="text/javascript">
+if (document.location.host == "yal.cc" && location.protocol == "http:") {
+	document.location.protocol = "https:";
+}
+</script>
+<style type="text/css">
+body, #doc tt {
+	font: 15px 'Open Sans', sans-serif;
+	line-height: 1.35;
+}
+body {
+	margin: 0;
+}
+.main {
+	width: 100%;
+	min-height: 100%;
+	min-height: 100vh;
+	background-color: #f9f9f9;
+}
+.page {
+	max-width: 656px;
+	background: #ffffff;
+	margin: 0 auto;
+	padding: 8px;
+	box-shadow: 0 0 0 2px #eee;
+	min-height: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+.page > p:first-child {
+	margin-top: 0;
+}
+#doc, #doc ul, #doc ol {
+	padding-left: 0;
+	margin: 0;
+}
+#doc div ul, #doc div ol {
+	padding-left: 20px;
+}
+#doc div ul li {
+	list-style: disc;
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px"/></svg>'); 
+}
+
+#doc .header {
+	display: block;
+	outline: none;
+	text-decoration: none;
+	margin: 0;
+	font-weight: 700;
+	font-size: 100%;
+	color: #458;
+	border-left: 2px solid #f3f3f3;/* #f9f9f9*/
+	padding-left: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	cursor: pointer;
+}
+#doc .header::before {
+	display: inline-block;
+	content: "+";
+	font: 12px monospace;
+	border: 1px solid #458;
+	line-height: 11px;
+	height: 11px;
+	width: 11px;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+	position: relative;
+	top: -1px;
+}
+#doc .item.open > .header::before {
+	content: "-";
+}
+#doc .item.empty > .header::before {
+	content: " "; /*"·"*/
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: #f3f3f3;
+}
+#doc .header .ret-arrow {
+	font-weight: normal;
+	margin: 0 0.1em;
+}
+
+#doc a.broken {
+	color: red;
+}
+#doc p {
+	margin: 0;
+}
+#doc p + p, #doc p.pad {
+	margin-top: 0.5em;
+}
+#doc img {
+	max-width: 100%;
+}
+#doc h3 {
+	margin: 0.25em 0;
+	font-size: 125%;
+	font-weight: normal;
+	border-bottom: 1px solid #ccc;
+}
+
+#doc .content, #doc ul {
+	padding-left: 20px;
+	border-left: 2px solid #f3f3f3;
+}
+#doc .content {
+	padding-top: 0.25em;
+	padding-bottom: 0.5em;
+}
+#doc tt {
+	font-weight: bold;
+}
+#doc pre {
+	font-family: Consolas, Dejavu Sans Mono, Segoe UI Mono, Ubuntu Mono, Lucida Console, monospace;
+	font-size: 9pt;
+	line-height: 1.25;
+	background: white;
+	padding: 4px 2px 4px 10px;
+	margin: 0;
+	tab-size: 4;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+#doc pre a {
+	text-decoration: none;
+}
+#doc pre a.uf {
+	background-color: #f7f0ff;
+}
+#doc pre a.kw {
+	background-color: #f0f7ff;
+}
+#doc pre a.sf, #doc pre a.sv {
+	background-color: #fff3f0;
+}
+#doc pre a:hover {
+	text-decoration: underline;
+}
+#doc abbr[title] {
+	text-decoration: underline;
+	text-decoration-color: #bbb;
+	text-decoration-style: double;
+}
+#doc hr {
+	margin: 0.5em 0;
+	margin-right: 1em;
+	border: 0;
+	border-top: 2px dashed #f3f3f3;
+}
+#doc .item + hr {
+	margin: 0;
+	height: 1em;
+	border: 1px solid #f3f3f3;
+	border-width: 1px 0 1px 0;
+}
+#doc .item {
+	border-top: 1px solid #f3f3f3;
+	margin-top: 0.3em;
+}
+#doc .item:first-child {
+	margin-top: 0em;
+}
+#doc .item:last-child {
+	border-bottom: 1px solid #f3f3f3;
+}
+#doc .item + .item, #doc hr + .item {
+	border-top: 0;
+	margin-top: 0;
+}
+#doc .item + p {
+	border-top: 1px solid #f3f3f3;
+	padding-top: 0.3em;
+}
+/* delay display until load */
+#doc[ready] .item:not(.open) > .content {
+	display: none;
+}
+</style>
+<style type="text/css" id="md_gml">
+/* GameMakerLanguage */
+pre.gmlmd .md { color: #7A81A9 } /* #define */
+pre.gmlmd .kw { color: #008; font-weight: bold } /* keyword */
+pre.gmlmd .co { color: #080 } /* comment */
+pre.gmlmd .nu { color: #00f } /* number */
+pre.gmlmd .nx { color: #00f } /* hex */
+pre.gmlmd .st { color: #00f } /* string */
+pre.gmlmd .ts { color: #00f } /* template string */
+pre.gmlmd .op { color: #000 } /* operator */
+pre.gmlmd .cb { color: #008; font-weight: bold } /* curly brace */
+pre.gmlmd .sv { color: #800 } /* std func */
+pre.gmlmd .sf { color: #800 } /* std var */
+pre.gmlmd .ri { color: #0078aa } /* assets */
+pre.gmlmd .uf { color: #808 } /* user func */
+pre.gmlmd .uv { color: #000 } /* user var */
+pre.gmlmd .lv { color: #648 } /* local var */
+pre.gmlmd .fd { color: #804 } /* field */
+</style>
+<style type="text/css" id="night_css">
+#night { display: none }
+label[for="night"] {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#night:checked + .main {
+	background-color: #405070;
+}
+#night:checked + .main .page {
+	background-color: #1A202D;
+	box-shadow: 0 0 0 2px #9bccff63;
+	color: white;
+}
+#night:checked + .main a,
+#night:checked + .main a:visited,
+#night:checked + .main #doc .header,
+#night:checked + .main label[for="night"] {
+	color: #9DEC76;
+}
+#night:checked + .main #doc .header:before,
+#night:checked + .main #doc h3 {
+	border-color: #9DEC76
+}
+#night:checked + .main #doc .header,
+#night:checked + .main #doc .header:hover,
+#night:checked + .main #doc .content,
+#night:checked + .main #doc .item,
+#night:checked + .main #doc .item + p,
+#night:checked + .main #doc hr,
+#night:checked + .main #doc ul {
+	border-color: rgba(205,225,255,0.1);
+}
+#night:checked + .main #doc .header:hover,
+#night:checked + .main #doc .asset:hover {
+	background: rgba(205,225,255,0.1);
+}
+#night:checked + .main div ul li {
+	list-style-image: url('data:image/svg+xml;base256,<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="1em" viewBox="0 0 20px 1em"><circle cx="17px" cy="0.675em" r="2px" fill="white"/></svg>'); 
+}
+#night:checked + .main pre {
+	color: #cccccc;
+	background: #000000;
+	border: 1px solid #3E4757;
+}
+#night:checked + .main pre.gmlmd .op { color: #CCCCCC }
+#night:checked + .main pre.gmlmd .co { color: #5B995B }
+#night:checked + .main pre.gmlmd .kw { color: #FFB871 }
+#night:checked + .main pre.gmlmd .md { color: #FFB871 }
+#night:checked + .main pre.gmlmd .cb { color: #FFB871 }
+#night:checked + .main pre.gmlmd .sf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .uf { color: #FFB871 }
+#night:checked + .main pre.gmlmd .nu { color: #FF8080 }
+#night:checked + .main pre.gmlmd .st { color: #FCF320 }
+#night:checked + .main pre.gmlmd .ts { color: #FF8080 }
+#night:checked + .main pre.gmlmd .sv { color: #FF8080 }
+#night:checked + .main pre.gmlmd .gv { color: #FF80FF }
+#night:checked + .main pre.gmlmd .ri { color: #FF8080 }
+#night:checked + .main pre.gmlmd .lv { color: #FFF899 }
+#night:checked + .main pre.gmlmd .uv { color: #B2B1FF }
+#night:checked + .main pre.gmlmd .fd { color: #B2B1FF }
+
+#night:checked + .main pre.gmlmd a.uf {
+	background-color: #431;
+}
+#night:checked + .main pre.gmlmd a.kw {
+	background-color: #431;
+}
+#night:checked + .main pre.gmlmd a.sf,
+#night:checked + .main pre.gmlmd a.sv {
+	background-color: #431;
+}
+</style>
+<style>
+.main.boxtt #doc tt {
+	display: inline-block;
+	background: #FFFBE4;
+	font-family: Consolas, Ubuntu Mono, Dejavu Sans Mono, Lucida Console, monospace;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 0 2px;
+	border: 1px solid #E6E0C4;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	max-width: 100%;
+	word-break: break-word;
+}
+#night:checked + .main.boxtt #doc tt {
+	background-color: #000;
+	border-color: #5b7c9f;
+	color: white;
+}
+</style>
+<style type="text/css" id="print_css">
+@media print {
+	.main { background-color: transparent }
+	.display-controls { display: none; }
+	.page { width: 100%; box-shadow: none; }
+	#doc .header::before,
+	#doc .item.open .header::before	{
+		content: "~";
+	}
+	#doc { display: inherit }
+	#doc .item:not(.open) > .content,
+	#doc[ready] .item:not(.open) > .content	{
+		display: inherit;
+	}
+}
+</style>
+<noscript><style>
+#doc .header::before {
+	content: "~";
+}
+#doc .header:hover {
+	border-left-color: #f3f3f3;
+	background: inherit;
+}
+#doc { display: inherit }
+#doc .item:not(.open) > .content {
+	display: inherit;
+}
+</style></noscript>
+</head><body>
+<input type="checkbox" id="night" checked/>
+<div class="main boxtt">
+<script type="text/javascript">
+(function() {
+	var night = document.getElementById("night");
+	var path = "docmd night mode";
+	var ls = window.localStorage;
+	if (ls) {
+		night.checked = ls.getItem(path) == "true";
+		night.onchange = function(_) {
+			ls.setItem(path, "" + night.checked);
+		};
+	}
+})();
+</script>
+<div class="page">
+<p>This is a "cheat sheet" page for <a href="https://github.com/GameMakerDiscord/tex-pack/">tex-pack</a>.  <br/>
+It concerns the &lt;=2.2 version of syntax, but there is also a &gt;=2.3 version.</p><p class="display-controls">
+Click on sections to expand/collapse them.<br>Quick display controls: <a href="#" onclick="opt_none(); return false">Categories</a>
+&middot; <a href="#" onclick="opt_list(); return false">Sections</a>
+&middot; <a href="#" onclick="opt_all(); return false">Everything</a>
+&middot; <label for="night">Toggle night mode</label><br/>
+</p><div id="doc">
+<!--<doc--><div class="item"><a class="header" id="tex_page" href="#tex_page" title="(permalink)">Texture pages</a><div class="content"><p>
+A texture page is a top-level object that holds sprites and texture pages inside.
+ 
+</p><div class="item"><a class="header" id="tex_page_create" href="#tex_page_create" title="(permalink)">tex_page_create(w, h)<span class="ret-arrow">&#10140;</span>tex_page</a><div class="content"><p>
+Creates a new, empty texture page of specified size.
+	 
+</p></div></div><div class="item"><a class="header" id="tex_page_width" href="#tex_page_width" title="(permalink)">tex_page_width:index:number</a><div class="content"><p>
+ Read-only; holds the width of this texture page 
+</p></div></div><div class="item"><a class="header" id="tex_page_height" href="#tex_page_height" title="(permalink)">tex_page_height:index:number</a><div class="content"><p>
+ Read-only; holds the height of this texture page 
+</p></div></div><div class="item"><a class="header" id="tex_page_root" href="#tex_page_root" title="(permalink)">tex_page_root:index:tex_entry</a><div class="content"><p>
+ Holds the top-level texture page entry node 
+</p></div></div><div class="item"><a class="header" id="tex_page_sprite" href="#tex_page_sprite" title="(permalink)">tex_page_sprite:index:sprite</a><div class="content"><p>
+ Once <a href="#tex_page_finalize">finalized</a>, holds the generated sprite 
+</p></div></div><div class="item"><a class="header" id="tex_page_sprites" href="#tex_page_sprites" title="(permalink)">tex_page_sprites:index:array&lt;tex_sprite&gt;</a><div class="content"><p>
+ An array of <a href="#tex_sprite">sprites</a> belonging to this texture page. 
+</p></div></div><div class="item"><a class="header" id="tex_page_surface" href="#tex_page_surface" title="(permalink)">tex_page_surface:index:surface</a><div class="content"><p>
+ The temporary surface holding the sprites. Is destroyed on <a href="#tex_page_finalize">tex_page_finalize</a>. 
+</p></div></div><div class="item"><a class="header" id="tex_page_custom" href="#tex_page_custom" title="(permalink)">tex_page_custom:index</a><div class="content"><p>
+Can be used as a starting offset for custom properties.
+	 
+</p></div></div><div class="item"><a class="header" id="tex_page_destroy" href="#tex_page_destroy" title="(permalink)">tex_page_destroy(tex_page)</a><div class="content"><p>
+Destroys the texture page and any associated resources.  <br/>
+Don't forget to destroy your texture pages when you are done using them!
+	 
+</p></div></div><div class="item"><a class="header" id="tex_page_add" href="#tex_page_add" title="(permalink)">tex_page_add(tex_page, fname, imgNumb, ox, oy)<span class="ret-arrow">&#10140;</span>tex_sprite</a><div class="content"><p>
+Basically <tt>sprite_add</tt>, but for texture pages.
+	 
+</p></div></div><div class="item"><a class="header" id="tex_page_finalize" href="#tex_page_finalize" title="(permalink)">tex_page_finalize(tex_page)</a><div class="content"><p>
+Creates the actual texture page sprite and destroys the temporary surface.
+</p><p>
+You need to finalize before you can draw sprites.
+	 
+</p></div></div></div></div><div class="item"><a class="header" id="tex_sprite" href="#tex_sprite" title="(permalink)">Sprites</a><div class="content"><p>
+Represents a sprite on a texture page.
+ 
+</p><div class="item"><a class="header" id="tex_sprite_create" href="#tex_sprite_create" title="(permalink)">tex_sprite_create(count, xofs, yofs)<span class="ret-arrow">&#10140;</span>tex_sprite</a><div class="content"><p>
+Generally you shouldn't have to instantiate sprites manually.
+	 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_images" href="#tex_sprite_images" title="(permalink)">tex_sprite_images:index:array&lt;tex_entry&gt;</a><div class="content"><p>
+An array of texture page entries for each sprite frame.  <br/>
+If something couldn't fit, an item may be <tt>undefined</tt>.
+	 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_count" href="#tex_sprite_count" title="(permalink)">tex_sprite_count:index:int</a><div class="content"><p>
+ (read-only) The number of subimages. 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_sprite" href="#tex_sprite_sprite" title="(permalink)">tex_sprite_sprite:index:sprite</a><div class="content"><p>
+ Once <a href="#tex_page_finalize">finalized</a>, holds the actual (GameMaker) sprite. 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_xoffset" href="#tex_sprite_xoffset" title="(permalink)">tex_sprite_xoffset:index:number</a><div class="content"><p>
+ (read-only) Sprite's origin X. 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_yoffset" href="#tex_sprite_yoffset" title="(permalink)">tex_sprite_yoffset:index:number</a><div class="content"><p>
+ (read-only) Sprite's origin Y. 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_set_offset" href="#tex_sprite_set_offset" title="(permalink)">tex_sprite_set_offset(tex_sprite, xo, yo)</a><div class="content"><p>
+Updates the origin of the sprite.
+	 
+</p></div></div><hr/><div class="item"><a class="header" id="tex_sprite_custom" href="#tex_sprite_custom" title="(permalink)">tex_sprite_custom:index</a><div class="content"><p>
+Can be used as a starting offset for custom properties.
+	 
+</p></div></div><p>
+
+Drawing functions:
+</p><div class="item"><a class="header" id="tex_sprite_draw" href="#tex_sprite_draw" title="(permalink)">tex_sprite_draw(tex_sprite, subimg, x, y)</a><div class="content"><p>
+Equivalent of <tt>draw_sprite</tt>
+	 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_draw_ext" href="#tex_sprite_draw_ext" title="(permalink)">tex_sprite_draw_ext(tex_sprite, subimg, x, y, scaleX, scaleY, rot, col, alpha)</a><div class="content"><p>
+ Equivalent of <tt>draw_sprite_ext</tt> 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_draw_part" href="#tex_sprite_draw_part" title="(permalink)">tex_sprite_draw_part(tex_sprite, subimg, left, top, width, height, x, y)</a><div class="content"><p>
+ Equivalent of <tt>draw_sprite_part</tt> 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_draw_part_ext" href="#tex_sprite_draw_part_ext" title="(permalink)">tex_sprite_draw_part_ext(tex_sprite, subimg, left, top, width, height, x, y, sx, sy, rot, c, a)</a><div class="content"><p>
+ Equivalent of <tt>draw_sprite_part_ext</tt>, except with angle, because why not. 
+</p></div></div><div class="item"><a class="header" id="tex_sprite_draw_general" href="#tex_sprite_draw_general" title="(permalink)">tex_sprite_draw_general(tex_sprite, subimg, left, top, width, height, x, y, sx, sy, rot, c1, c2, c3, c4, a)</a><div class="content"><p>
+ Equivalent of <tt>draw_sprite_general</tt> 
+</p></div></div></div></div><div class="item"><a class="header" id="tex_entry" href="#tex_entry" title="(permalink)">Texture page entries</a><div class="content"><p>
+Represents an individual image on a texture page.
+ 
+</p><div class="item empty"><a class="header" id="tex_entry_create" href="#tex_entry_create" title="(permalink)">tex_entry_create(x, y, w, h)<span class="ret-arrow">&#10140;</span>tex_entry</a></div><p>
+
+The following define a rectangle within the texture page:
+</p><div class="item empty"><a class="header" id="tex_entry_left" href="#tex_entry_left" title="(permalink)">tex_entry_left:index:number</a></div><div class="item empty"><a class="header" id="tex_entry_top" href="#tex_entry_top" title="(permalink)">tex_entry_top:index:number</a></div><div class="item empty"><a class="header" id="tex_entry_width" href="#tex_entry_width" title="(permalink)">tex_entry_width:index:number</a></div><div class="item empty"><a class="header" id="tex_entry_height" href="#tex_entry_height" title="(permalink)">tex_entry_height:index:number</a></div><p>
+
+The following define the subimage's origin:
+</p><div class="item empty"><a class="header" id="tex_entry_xoffset" href="#tex_entry_xoffset" title="(permalink)">tex_entry_xoffset:index:number</a></div><div class="item empty"><a class="header" id="tex_entry_yoffset" href="#tex_entry_yoffset" title="(permalink)">tex_entry_yoffset:index:number</a></div><p>
+
+The following hold the child nodes (if any):
+</p><div class="item empty"><a class="header" id="tex_entry_node_a" href="#tex_entry_node_a" title="(permalink)">tex_entry_node_a:index:tex_entry</a></div><div class="item empty"><a class="header" id="tex_entry_node_b" href="#tex_entry_node_b" title="(permalink)">tex_entry_node_b:index:tex_entry</a></div><hr/><div class="item"><a class="header" id="tex_entry_custom" href="#tex_entry_custom" title="(permalink)">tex_entry_custom:index</a><div class="content"><p>
+Can be used as a starting offset for custom properties.
+	 
+</p></div></div><hr/><div class="item"><a class="header" id="tex_entry_add" href="#tex_entry_add" title="(permalink)">tex_entry_add(tex_entry, imgWidth, imgHeight)<span class="ret-arrow">&#10140;</span>tex_entry</a><div class="content"><p>
+Tries to allocate a spot of given dimensions in this or child nodes.
+</p><p>
+Returns the texture page entry that was chosen.
+</p><p>
+If there is no free spot, returns <tt>undefined</tt>.
+	 
+</p></div></div></div></div><!--doc>-->
+</div></div></div>
+<script>(function() {
+var doc, headers;
+//
+var path = "tex-pack";
+var state = null;
+if (window.localStorage && JSON.parse) {
+	state = window.localStorage.getItem(path);
+	state = state ? JSON.parse(state) : { };
+	if (state == null) state = { };
+}
+var isLocal = (location.host.indexOf("localhost") == 0);
+//
+function h3bind(h3) {
+	var node = h3.parentNode;
+	var snip = node.children[1];
+	var id = h3.id || h3.textContent;
+	h3.snip = snip;
+	h3.doc_set = function(z) {
+		if (z) node.classList.add("open"); else node.classList.remove("open");
+		if (state) {
+			state[id] = z;
+			window.localStorage.setItem(path, JSON.stringify(state));
+		}
+	}
+	h3.doc_hide = function() {
+		this.doc_set(false);
+	}
+	h3.doc_show = function() {
+		this.doc_set(true);
+	}
+	h3.onclick = function(_) {
+		var seen = !node.classList.contains("open");
+		h3.doc_set(seen);
+		return false;
+	};
+}
+function getHashFunc(id) {
+	var node = document.getElementById(id);
+	if (node == null) return null;
+	return function(e) {
+		while (node && node != doc) {
+			if (node.classList.contains("item")) {
+				node.classList.add("open");
+			}
+			node = node.parentElement;
+		}
+	};
+}
+// Display helpers:
+window.opt_none = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_hide();
+};
+window.opt_list = function() {
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		if (h3.parentNode.parentNode != doc) {
+			h3.doc_hide();
+		} else h3.doc_show();
+	}
+};
+window.opt_all = function() {
+	for (var li = 0; li < headers.length; li++) headers[li].doc_show();
+};
+window.live_post = function() {
+	doc = document.getElementById("doc");
+	headers = doc.getElementsByClassName("header");
+	//
+	for (var i = 0; i < headers.length; i++) h3bind(headers[i]);
+	// Clicks in document expand the related section:
+	var anchors = doc.getElementsByTagName("a");
+	for (var i = 0; i < anchors.length; i++) {
+		var anchor = anchors[i];
+		if (anchor.classList.contains("header")) continue;
+		var href = anchor.getAttribute("href");
+		if (href[0] == "#") {
+			var fn = getHashFunc(href.substr(1));
+			if (!fn) {
+				anchor.classList.add("broken");
+				anchor.title = "(section missing)";
+			} else anchor.addEventListener("click", fn);
+		}
+	}
+	//
+	for (var li = 0; li < headers.length; li++) {
+		var h3 = headers[li];
+		var val = state ? state[h3.id || h3.textContent] : null;
+		if (val == null) val = isLocal || h3.parentNode.parentNode == doc;
+		if (val) h3.doc_show(); else h3.doc_hide();
+	}
+};
+window.live_post();
+//
+(function() {
+	var hash = document.location.hash;
+	if (hash) {
+		var _hash = hash.substr(1);
+		getHashFunc(_hash)();
+		setTimeout(function() {
+			document.location.hash = hash + " ";
+			setTimeout(function() {
+				document.location.hash = hash;
+			}, 100);
+		}, 100);
+	}
+})();
+//
+doc.setAttribute("ready", "");
+})();
+</script>
+</body></html>

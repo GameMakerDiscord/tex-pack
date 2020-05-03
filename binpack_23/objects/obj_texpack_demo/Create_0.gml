@@ -14,8 +14,8 @@ for (; f != ""; f = file_find_next()) {
 			img.label = string_digits(name);
 			img.index = i;
 			img.sprite = sp;
-			img.origX = img.width / 2;
-			img.origY = img.height / 2;
+			img.xoffset = img.width / 2;
+			img.yoffset = img.height / 2;
 		} else {
 			show_debug_message("Can't fit " + name + " image " + string(i));
 		}

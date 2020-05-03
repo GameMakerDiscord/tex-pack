@@ -13,8 +13,8 @@ ds_queue_enqueue(vis_queue, tpage[tex_page_root]);
 var spr = undefined, img = -1;
 while (!ds_queue_empty(vis_queue)) {
 	var e = ds_queue_dequeue(vis_queue);
-	var ex = e[tex_entry_x];
-	var ey = e[tex_entry_y];
+	var ex = e[tex_entry_left];
+	var ey = e[tex_entry_top];
 	var ew = e[tex_entry_width];
 	var eh = e[tex_entry_height];
 	//

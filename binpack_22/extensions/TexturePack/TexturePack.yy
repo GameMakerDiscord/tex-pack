@@ -40,18 +40,18 @@
                     "value": "g_tex_entry_insert_stack"
                 },
                 {
-                    "id": "2a2af412-4966-0a6f-a0b2-8cd551370bde",
+                    "id": "8dbfad37-d284-d861-cef5-47c81b946b2c",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_x",
+                    "constantName": "tex_entry_left",
                     "hidden": false,
                     "value": "1"
                 },
                 {
-                    "id": "dd10c7c8-90a6-a411-5f28-fd1812140564",
+                    "id": "f4800ad6-c867-51a1-90e7-c614a26864e4",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_y",
+                    "constantName": "tex_entry_top",
                     "hidden": false,
                     "value": "2"
                 },
@@ -72,18 +72,18 @@
                     "value": "4"
                 },
                 {
-                    "id": "ef6f3829-3a5b-48f1-ea86-b0bd16506f06",
+                    "id": "5a50a604-d958-089c-139c-2ff583aa09ab",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_orig_x",
+                    "constantName": "tex_entry_xoffset",
                     "hidden": false,
                     "value": "5"
                 },
                 {
-                    "id": "90dfa1ce-4ae8-7fa6-5259-67397a26c4d3",
+                    "id": "0d15c864-3098-3631-21e4-78aff44e6e93",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
-                    "constantName": "tex_entry_orig_y",
+                    "constantName": "tex_entry_yoffset",
                     "hidden": false,
                     "value": "6"
                 },
@@ -192,12 +192,28 @@
                     "value": "3"
                 },
                 {
+                    "id": "776a4236-6f25-aff5-6b77-6078f7dd1ba4",
+                    "modelName": "GMExtensionConstant",
+                    "mvc": "1.0",
+                    "constantName": "tex_sprite_xoffset",
+                    "hidden": false,
+                    "value": "4"
+                },
+                {
+                    "id": "fce327af-1f5d-681e-d7bd-cecce1235e83",
+                    "modelName": "GMExtensionConstant",
+                    "mvc": "1.0",
+                    "constantName": "tex_sprite_yoffset",
+                    "hidden": false,
+                    "value": "5"
+                },
+                {
                     "id": "af17b927-9f20-7132-378f-b0e91e429100",
                     "modelName": "GMExtensionConstant",
                     "mvc": "1.0",
                     "constantName": "tex_sprite_custom",
                     "hidden": false,
-                    "value": "4"
+                    "value": "6"
                 }
             ],
             "copyToTargets": -1,
@@ -238,22 +254,20 @@
                     "returnType": 2
                 },
                 {
-                    "id": "bf26cc58-a995-1bc0-f3af-748584d76094",
+                    "id": "668e8565-68c6-1633-569e-37c6ec789d18",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
-                    "argCount": 5,
+                    "argCount": 3,
                     "args": [
-                        2,
-                        2,
                         2,
                         2,
                         2
                     ],
-                    "externalName": "tex_entry_insert",
-                    "help": "tex_entry_insert(this:tex_entry, imgWidth:real, imgHeight:real, ox:real, oy:real)->TexEntry",
+                    "externalName": "tex_entry_add",
+                    "help": "tex_entry_add(this:tex_entry, imgWidth:real, imgHeight:real)->TexEntry",
                     "hidden": false,
                     "kind": 2,
-                    "name": "tex_entry_insert",
+                    "name": "tex_entry_add",
                     "returnType": 2
                 },
                 {
@@ -266,7 +280,7 @@
                         2
                     ],
                     "externalName": "tex_page_create",
-                    "help": "tex_page_create(w:int, h:int)",
+                    "help": "tex_page_create(w:int, h:int)\/\/ * Creates a new, empty texture page of specified size.",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_page_create",
@@ -300,7 +314,7 @@
                         2
                     ],
                     "externalName": "tex_page_add",
-                    "help": "tex_page_add(this:tex_page, fname:string, imgNumb:int, ox:real, oy:real)->TexSprite",
+                    "help": "tex_page_add(this:tex_page, fname:string, imgNumb:int, ox:real, oy:real)->TexSprite\/\/ * Basically `sprite_add`, but for texture pages.",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_page_add",
@@ -325,15 +339,34 @@
                     "id": "d75c20e5-0753-e82f-bc73-30d797344bf2",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
-                    "argCount": 1,
+                    "argCount": 3,
                     "args": [
+                        2,
+                        2,
                         2
                     ],
                     "externalName": "tex_sprite_create",
-                    "help": "tex_sprite_create(count:int)",
+                    "help": "tex_sprite_create(count:int, xofs:real, yofs:real)\/\/ * Generally you shouldn't have to instantiate sprites manually.",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_create",
+                    "returnType": 2
+                },
+                {
+                    "id": "cf9b53fb-23cc-25d1-dca1-82bbf3335ad7",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 3,
+                    "args": [
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "tex_sprite_set_offset",
+                    "help": "tex_sprite_set_offset(this:tex_sprite, xo:real, yo:real)\/\/ * Updates the origin of the sprite.",
+                    "hidden": false,
+                    "kind": 2,
+                    "name": "tex_sprite_set_offset",
                     "returnType": 2
                 },
                 {
@@ -371,10 +404,89 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw_ext",
-                    "help": "tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)",
+                    "help": "tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)\/\/ Equivalent of `draw_sprite_ext`",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw_ext",
+                    "returnType": 2
+                },
+                {
+                    "id": "b819f60b-8a08-3d56-6cc2-7d81e825716e",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 8,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "tex_sprite_draw_part",
+                    "help": "tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real)\/\/ Equivalent of `draw_sprite_part`",
+                    "hidden": false,
+                    "kind": 2,
+                    "name": "tex_sprite_draw_part",
+                    "returnType": 2
+                },
+                {
+                    "id": "f4d12441-c582-0345-c0de-c790cec31ef6",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 13,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "tex_sprite_draw_part_ext",
+                    "help": "tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, a:real)\/\/ Equivalent of `draw_sprite_part_ext`, except with angle, because why not.",
+                    "hidden": false,
+                    "kind": 2,
+                    "name": "tex_sprite_draw_part_ext",
+                    "returnType": 2
+                },
+                {
+                    "id": "afd34e32-6036-a8a1-387d-505da20e5e5f",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 16,
+                    "args": [
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2,
+                        2
+                    ],
+                    "externalName": "tex_sprite_draw_general",
+                    "help": "tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)\/\/ Equivalent of `draw_sprite_general`",
+                    "hidden": false,
+                    "kind": 2,
+                    "name": "tex_sprite_draw_general",
                     "returnType": 2
                 },
                 {

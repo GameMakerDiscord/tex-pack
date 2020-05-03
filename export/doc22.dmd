@@ -1,0 +1,11 @@
+```set template default.html```
+```set title tex-pack```
+```gmlapi fnames2```
+```set autoapi ext```
+```set mainclass boxtt```
+```setmd intro
+This is a "cheat sheet" page for [tex-pack](https://github.com/GameMakerDiscord/tex-pack/).  
+It concerns the <=2.2 version of syntax, but there is also a >=2.3 version.
+```
+
+%[autogen]

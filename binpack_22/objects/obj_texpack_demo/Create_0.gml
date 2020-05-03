@@ -7,8 +7,8 @@ for (; f != ""; f = file_find_next()) {
 	for (var i = 0; i < sp[tex_sprite_count]; i++) {
 		var img = images[i];
 		if (img != undefined) {
-			img[@tex_entry_orig_x] = img[tex_entry_width] / 2;
-			img[@tex_entry_orig_y] = img[tex_entry_height] / 2;
+			img[@tex_entry_xoffset] = img[tex_entry_width] / 2;
+			img[@tex_entry_yoffset] = img[tex_entry_height] / 2;
 			img[@tex_entry_custom] = string_digits(name);
 			img[@tex_entry_custom + 1] = sp;
 			img[@tex_entry_custom + 2] = i;

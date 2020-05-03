@@ -8,37 +8,51 @@ import gml.ds.Stack;
 import gml.gpu.GPU;
 
 /**
- * ...
+ * Represents an individual image on a texture page.
+ * @dmdPath ["", "Texture page entries", 1]
  * @author YellowAfterlife
  */
 @:doc @:keep class TexEntry {
-	#if sfgml.modern
-	// declaring static X/Y is not allowed as of now
-	@:remove public var x:Float;
-	@:remove public var y:Float;
-	#else
-	public var x:Float;
-	public var y:Float;
-	#end
+	
+	/** @dmdPrefix The following define a rectangle within the texture page: */
+	public var left:Float;
+	public var top:Float;
 	public var width:Float;
 	public var height:Float;
-	public var origX:Float = 0;
-	public var origY:Float = 0;
+	
+	/** @dmdPrefix The following define the subimage's origin: */
+	public var xoffset:Float = 0;
+	public var yoffset:Float = 0;
+	
+	/** @dmdPrefix The following hold the child nodes (if any): */
 	public var nodeA:TexEntry = null;
 	public var nodeB:TexEntry = null;
 	#if !sfgml.modern
+	/**
+	 * Can be used as a starting offset for custom properties.
+	 * @dmdPrefix ---
+	 */
 	public var custom:Dynamic = null;
 	#end
 	//
 	public function new(x:Float, y:Float, w:Float, h:Float) {
-		this.x = x;
-		this.y = y;
+		this.left = x;
+		this.top = y;
 		this.width = w;
 		this.height = h;
 	}
 	
 	@:noDoc private static var insertStack:Stack<TexEntry> = new Stack();
-	public function insert(imgWidth:Float, imgHeight:Float, ox:Float, oy:Float):TexEntry {
+	
+	/**
+	 * Tries to allocate a spot of given dimensions in this or child nodes.
+	 * 
+	 * Returns the texture page entry that was chosen.
+	 * 
+	 * If there is no free spot, returns `undefined`.
+	 * @dmdPrefix ---
+	 */
+	public function add(imgWidth:Float, imgHeight:Float):TexEntry {
 		var stack = insertStack;
 		stack.clear();
 		stack.push(this);
@@ -73,21 +87,19 @@ import gml.gpu.GPU;
 				// +---+---+
 				// |   B   |
 				// +-------+
-				e.nodeA = new TexEntry(e.x + imgWidth, e.y, remWidth, imgHeight);
-				e.nodeB = new TexEntry(e.x, e.y + imgHeight, entryWidth, remHeight);
+				e.nodeA = new TexEntry(e.left + imgWidth, e.top, remWidth, imgHeight);
+				e.nodeB = new TexEntry(e.left, e.top + imgHeight, entryWidth, remHeight);
 			} else {
 				// +---+---+
 				// | E |   |
 				// +---+ B +
 				// | A |   |
 				// +-------+
-				e.nodeA = new TexEntry(e.x, e.y + imgHeight, imgWidth, remHeight);
-				e.nodeB = new TexEntry(e.x + imgWidth, e.y, remWidth, entryHeight);
+				e.nodeA = new TexEntry(e.left, e.top + imgHeight, imgWidth, remHeight);
+				e.nodeB = new TexEntry(e.left + imgWidth, e.top, remWidth, entryHeight);
 			}
 			e.width = imgWidth;
 			e.height = imgHeight;
-			e.origX = ox;
-			e.origY = oy;
 			stack.clear();
 			return e;
 		}
