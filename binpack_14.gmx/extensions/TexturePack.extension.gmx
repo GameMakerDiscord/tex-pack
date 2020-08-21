@@ -58,7 +58,7 @@
           <name>tex_entry_create</name>
           <externalName>tex_entry_create</externalName>
           <kind>11</kind>
-          <help>tex_entry_create(l_x:real, l_y:real, w:real, h:real)</help>
+          <help>tex_entry_create(x:real, y:real, w:real, h:real)</help>
           <returnType>2</returnType>
           <argCount>4</argCount>
           <args>
@@ -160,7 +160,7 @@
           <name>tex_sprite_draw</name>
           <externalName>tex_sprite_draw</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw(this:tex_sprite, subimg:real, l_x:real, l_y:real)</help>
+          <help>tex_sprite_draw(this:tex_sprite, subimg:real, x:real, y:real)</help>
           <returnType>2</returnType>
           <argCount>4</argCount>
           <args>
@@ -174,7 +174,7 @@
           <name>tex_sprite_draw_ext</name>
           <externalName>tex_sprite_draw_ext</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)// Equivalent of `draw_sprite_ext`</help>
+          <help>tex_sprite_draw_ext(this:tex_sprite, subimg:real, x:real, y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)// Equivalent of `draw_sprite_ext`</help>
           <returnType>2</returnType>
           <argCount>9</argCount>
           <args>
@@ -193,7 +193,7 @@
           <name>tex_sprite_draw_part</name>
           <externalName>tex_sprite_draw_part</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real)// Equivalent of `draw_sprite_part`</help>
+          <help>tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real)// Equivalent of `draw_sprite_part`</help>
           <returnType>2</returnType>
           <argCount>8</argCount>
           <args>
@@ -211,7 +211,7 @@
           <name>tex_sprite_draw_part_ext</name>
           <externalName>tex_sprite_draw_part_ext</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, a:real)// Equivalent of `draw_sprite_part_ext`, except with angle, because why not.</help>
+          <help>tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real, sx:real, sy:real, rot:real, c:Color, a:real)// Equivalent of `draw_sprite_part_ext`, except with angle, because why not.</help>
           <returnType>2</returnType>
           <argCount>13</argCount>
           <args>
@@ -234,7 +234,7 @@
           <name>tex_sprite_draw_general</name>
           <externalName>tex_sprite_draw_general</externalName>
           <kind>11</kind>
-          <help>tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)// Equivalent of `draw_sprite_general`</help>
+          <help>tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)// Equivalent of `draw_sprite_general`</help>
           <returnType>2</returnType>
           <argCount>16</argCount>
           <args>
@@ -262,8 +262,11 @@
           <kind>11</kind>
           <help></help>
           <returnType>2</returnType>
-          <argCount>-1</argCount>
-          <args/>
+          <argCount>2</argCount>
+          <args>
+            <arg>2</arg>
+            <arg>2</arg>
+          </args>
         </function>
         <function>
           <name>tex_std_haxe_boot_wget</name>
