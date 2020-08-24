@@ -247,7 +247,7 @@
                         2
                     ],
                     "externalName": "tex_entry_create",
-                    "help": "tex_entry_create(l_x:real, l_y:real, w:real, h:real)",
+                    "help": "tex_entry_create(x:real, y:real, w:real, h:real)",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_entry_create",
@@ -381,7 +381,7 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw",
-                    "help": "tex_sprite_draw(this:tex_sprite, subimg:real, l_x:real, l_y:real)",
+                    "help": "tex_sprite_draw(this:tex_sprite, subimg:real, x:real, y:real)",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw",
@@ -404,7 +404,7 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw_ext",
-                    "help": "tex_sprite_draw_ext(this:tex_sprite, subimg:real, l_x:real, l_y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)\/\/ Equivalent of `draw_sprite_ext`",
+                    "help": "tex_sprite_draw_ext(this:tex_sprite, subimg:real, x:real, y:real, scaleX:real, scaleY:real, rot:real, col:Color, alpha:real)\/\/ Equivalent of `draw_sprite_ext`",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw_ext",
@@ -426,7 +426,7 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw_part",
-                    "help": "tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real)\/\/ Equivalent of `draw_sprite_part`",
+                    "help": "tex_sprite_draw_part(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real)\/\/ Equivalent of `draw_sprite_part`",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw_part",
@@ -453,7 +453,7 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw_part_ext",
-                    "help": "tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, a:real)\/\/ Equivalent of `draw_sprite_part_ext`, except with angle, because why not.",
+                    "help": "tex_sprite_draw_part_ext(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real, sx:real, sy:real, rot:real, c:Color, a:real)\/\/ Equivalent of `draw_sprite_part_ext`, except with angle, because why not.",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw_part_ext",
@@ -483,7 +483,7 @@
                         2
                     ],
                     "externalName": "tex_sprite_draw_general",
-                    "help": "tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, l_x:real, l_y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)\/\/ Equivalent of `draw_sprite_general`",
+                    "help": "tex_sprite_draw_general(this:tex_sprite, subimg:real, left:real, top:real, width:real, height:real, x:real, y:real, sx:real, sy:real, rot:real, c:Color, c:Color, c:Color, c:Color, a:real)\/\/ Equivalent of `draw_sprite_general`",
                     "hidden": false,
                     "kind": 2,
                     "name": "tex_sprite_draw_general",

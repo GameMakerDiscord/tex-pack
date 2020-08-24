@@ -96,7 +96,7 @@ import gml.gpu.Surface;
 			if (qe != null) {
 				qe.xoffset = ox;
 				qe.yoffset = oy;
-				spr.draw(0, qe.left, qe.top);
+				spr.draw(i, qe.left, qe.top);
 			}
 		}
 		//

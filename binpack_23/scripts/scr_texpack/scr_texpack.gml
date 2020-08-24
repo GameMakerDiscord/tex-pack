@@ -1,13 +1,13 @@
-// Generated at 2020-06-24 18:35:11 (264ms) for v2.3+
-//{ metatype
+// Generated at 2020-08-21 22:10:54 (259ms) for v2.3+
+#region metatype
 globalvar tex_std_haxe_type_markerValue; tex_std_haxe_type_markerValue = [];
 globalvar mt_TexEntry; mt_TexEntry = new tex_std_haxe_class(-1, "TexEntry");
 globalvar mt_TexPage; mt_TexPage = new tex_std_haxe_class(-1, "TexPage");
 globalvar mt_TexSprite; mt_TexSprite = new tex_std_haxe_class(-1, "TexSprite");
 globalvar mt_tex_std_haxe_class; mt_tex_std_haxe_class = new tex_std_haxe_class(-1, "tex_std_haxe_class");
-//}
+#endregion
 
-//{ TexEntry
+#region TexEntry
 
 globalvar TexEntry; TexEntry = method(undefined, function(_x, _y, _w, _h) constructor {
 	/// TexEntry(x:real, y:real, w:real, h:real)
@@ -69,9 +69,9 @@ globalvar TexEntry; TexEntry = method(undefined, function(_x, _y, _w, _h) constr
 });
 mt_TexEntry.i_constructor = TexEntry;
 
-//}
+#endregion
 
-//{ TexPage
+#region TexPage
 
 globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 	/// TexPage(w:int, h:int)
@@ -93,7 +93,7 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 				var _qs = __g1[__g];
 				__g++;
 				var _i = 0;
-				for (var __g3 = _qs.count; _i < __g3; _i++) {
+				for (var __g11 = _qs.count; _i < __g11; _i++) {
 					_qs.images[@_i] = undefined;
 				}
 			}
@@ -104,7 +104,7 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 		}
 	}
 	static add = function(_fname, _imgNumb, _ox, _oy) {
-		if (self.sprite != -1) throw tex_std_haxe_Exception.thrown("This texture page is already finalized");
+		if (self.sprite != -1) throw "This texture page is already finalized";
 		var _spr = sprite_add(_fname, _imgNumb, false, false, 0, 0);
 		if (_spr == -1) return undefined;
 		var _sw = sprite_get_width(_spr);
@@ -120,7 +120,7 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 			if (_qe != undefined) {
 				_qe.xoffset = _ox;
 				_qe.yoffset = _oy;
-				draw_sprite(_spr, 0, _qe.left, _qe.top);
+				draw_sprite(_spr, _i, _qe.left, _qe.top);
 			}
 		}
 		gpu_set_blendmode_ext(_ob);
@@ -130,7 +130,7 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 		return _qs;
 	}
 	static finalize = function() {
-		if (self.sprite != -1) throw tex_std_haxe_Exception.thrown("This texture page is already finalized");
+		if (self.sprite != -1) throw "This texture page is already finalized";
 		var __this = self.surface;
 		self.sprite = sprite_create_from_surface(__this, 0, 0, surface_get_width(__this), surface_get_height(__this), false, false, 0, 0);
 		var _i = 0;
@@ -152,9 +152,9 @@ globalvar TexPage; TexPage = method(undefined, function(_w, _h) constructor {
 });
 mt_TexPage.i_constructor = TexPage;
 
-//}
+#endregion
 
-//{ TexSprite
+#region TexSprite
 
 globalvar TexSprite; TexSprite = method(undefined, function(_count, _xofs, _yofs) constructor {
 	/// TexSprite(count:int, xofs:real, yofs:real)
@@ -230,9 +230,9 @@ globalvar TexSprite; TexSprite = method(undefined, function(_count, _xofs, _yofs
 });
 mt_TexSprite.i_constructor = TexSprite;
 
-//}
+#endregion
 
-//{ tex_std.haxe.class
+#region tex_std.haxe.class
 
 function tex_std_haxe_class(_id, _name) constructor {
 	// tex_std_haxe_class(id:int, name:string)
@@ -249,24 +249,7 @@ function tex_std_haxe_class(_id, _name) constructor {
 }
 mt_tex_std_haxe_class.i_constructor = tex_std_haxe_class;
 
-//}
-
-//{ tex_std.haxe.Exception
-globalvar tex_std_haxe_Exception; tex_std_haxe_Exception = {}
-tex_std_haxe_Exception.thrown = method(tex_std_haxe_Exception, function(_value) {
-	// tex_std_haxe_Exception.thrown(value:any)->any
-	if (is_struct(_value) && variable_struct_get(_value, "__exception__") == true) return _value;
-	return {
-		value: _value,
-		message: string(_value),
-		longMessage: "",
-		script: "",
-		stacktrace: debug_get_callstack(),
-		__exception__: true
-	}
-});
-
-//}
+#endregion
 
 // TexEntry:
  TexEntry.insertStack = ds_stack_create();
